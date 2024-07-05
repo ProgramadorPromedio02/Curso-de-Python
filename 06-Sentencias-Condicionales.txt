@@ -1,0 +1,134 @@
+Sentencias Condicionales
+........................
+
+¿Qué es una Sentencia Condicional?
+----------------------------------
+ Una sentencia condicional es una instrucción o un grupo de instracciones cuya ejecución depende del valor de una condición booleana.
+
+					|
+					V
+	      Verdadera		    _________               Falsa
+	      ---------------------|Condición|--------------------
+	      |			   |_________|		         |	
+         _____________			 			 |
+        |Instrucciones|						 |
+	|_____________| 					 |
+	      |							 |
+	      |__________________________________________________|
+					|
+					V
+
+
+- Sintaxis:
+ if <condición>:
+  # Código
+
+- Ejemplo:
+>>> temp = 15
+>>> if temp < 25:
+        print("Frío")
+Frío
+>>> temp = 36
+>>> if temp < 25:
+	print("Frío")
+...
+
+Cláusula 'else'
+---------------
+
+					|
+					V
+	      Verdadera		    _________               Falsa
+	      ---------------------|Condición|--------------------
+	      |			   |_________|		         |	
+         _____________			 	          _______________
+        |Instrucciones|					 |Cláusula 'else'|
+	|_____________| 				 |_______________|
+	      |							 |
+	      |__________________________________________________|
+					|
+					V
+
+
+- Sintaxis:
+ if <condición>:
+     # Código
+ else:
+     # Código
+
+- Ejemplo:
+1 temp = 15
+2
+3 if temp < 25:
+4 	print("Frío")
+5 else:
+6 	print("Calor")
+Frío
+
+1 temp = 35
+2
+3 if temp < 25:
+4 	print("Frío")
+5 else:
+6 	print("Calor")
+Calor
+
+Cláusula 'elif'
+---------------
+
+- Sintaxis:
+ if <condición1>:
+ 	# Código
+ elif <condición2>:
+	# Código
+ else:
+	# Código
+
+- Ejemplo:
+1 temp = 0
+2
+3 if temp <= 0:
+4 	print("Muy Frío")
+5 elif temp < 25:
+6	print("Frío")
+7 else:
+8	print("Calor")
+9
+Muy Frío
+
+1 temp = 15
+2
+3 if temp <= 0:
+4 	print("Muy Frío")
+5 elif temp < 25:
+6	print("Frío")
+7 else:
+8	print("Calor")
+9
+Frío
+
+1 temp = 35
+2
+3 if temp <= 0:
+4 	print("Muy Frío")
+5 elif temp < 25:
+6	print("Frío")
+7 else:
+8	print("Calor")
+9
+Calor
+
+🗒Nota: Puede haber más de una cláusula 'elif', pero solo una cláusula 'else'.
+
+- Sintaxis:
+ if <condición1>:
+	# Código
+ elif <condición2>:
+	# Código
+ elif <condición3>:
+	# Código
+ elif <condición4>:
+	# Código
+ else:
+	# Código
+

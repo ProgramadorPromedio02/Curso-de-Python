@@ -1,0 +1,22 @@
+Documentación
+.............
+
+Documentación Principal
+• Enlace: Documentación Oficial de Python 3.12
+• Descripción: La fuente oficial para toda la información sobre Python, incluyendo guías, referencias y tutoriales.
+
+Tutorial
+• Enlace: Tutorial de Python 3.12
+• Descripción: Un recorrido paso a paso que te ayuda a aprender Python desde cero.
+
+Biblioteca Estándar de Python
+• Enlace: Biblioteca Estándar de Python 3.12
+• Descripción: Información sobre todos los módulos y paquetes incluidos con Python.
+
+Referencia del Lenguaje Python
+• Enlace: Referencia del Lenguaje Python 3.12
+• Descripción: Detalles técnicos y precisos sobre la sintaxis y las características del lenguaje Python.
+
+PEPs (Python Enhancement Proposals)
+• Enlace: PEPs
+• Descripción: Documentos de propuestas de mejora para Python, que incluyen nuevas características, información de diseño y documentación del proceso.

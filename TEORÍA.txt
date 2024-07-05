@@ -1,0 +1,2262 @@
+INTRODUCCIÓN
+............
+
+Cómo instalar Python
+--------------------
+
+
+¿Qué es un IDLE?
+----------------
+ Entorno integrado de programación que se instala automáticamente cuando instalas Python.
+
+Con IDLE puedes:
+• Escribir |
+• Editar   | --> Código
+• Ejecutar |
+
+ Para poder ejecutar ese IDLE, tenemos que ir a la siguiente ubicación.
+Ubicación:
+C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\idlelib
+
+VARIABLES
+.........
+
+¿Qué es una VARIABLE?
+---------------------
+
+ Una variable es un nombre que se le asigna a un valor en el programa(espacio en memoria). 
+- Ejemplo:
+	Asignación
+	    ^
+	    |
+	num = 5 -> Valor
+        |
+	      V
+	Nombre de la variable
+
+- Sintaxis:
+      Asignación
+	  ^
+	  |
+	<var> = <val> -> Valor
+         	 |
+	         V
+  	Nombre de la variable
+
+Reglas para Nombrar Variables
+
+• Los nombres de variables deben empezar con una letra o con un guión bajo.
+
+- Ejemplo: mi_variable / _mi_variable
+
+• Los nombres de variables no pueden comenzar con un número, de lo contrario, ocurrira un error de sintaxis.
+
+- Ejemplo: 9mi_variable = 5
+SyntaxError: invalid syntax
+^		          ^  
+|		          |
+Error de     Sintaxis inválida
+Sintaxis
+
+• Solo pueden contener caracteres alfanuméricos(A-Z, a-z, 0-9, _).
+
+- Ejemplo: num_vistas = 12442
+
+• No pueden contener caracteres que no sean alfanuméricos.
+
+- Ejemplo: @variable = 34
+SyntaxError: invalid syntax
+
+• Se distingue entre mayúsculas y minúsculas(CaseSensitive).
+
+- Ejemplo: edad/Edad/EDAD
+
+
+Tipos de Datos
+..............
+
+Númericos
+---------
+
+• Entero:
+ Números que no tienen decimales.
+* Positivos.
+* Negativos.
+* Cero.
+
+- Ejemplos:
+
+5  -3  0
+
+3  -8
+
+15 -1
+
+27 -16
+
+- Type(): para saber el tipo de dato de la variable.
+
+<class 'int'>
+int => Integer = Entero
+
+- Ejemplos:
+
+>>> type(5)
+<class 'int'>
+>>> type(-15)
+<class 'int'>
+>>> type(0)
+<class 'int'>
+
+🗒Nota: En python no hay límites sino el sistema que permita en nuestro dispositivo.
+
+• Números en Coma Flotante:
+ Números que tienen decimales.
+ * Positivos.
+ * Negativos.
+
+- Type():
+
+<class 'float'>
+Float = Flotar
+
+- Ejemplos:
+>>> type(0.5)
+<class 'float'>
+>>> type(13.4)
+<class 'float'>
+>>> type(4.0)
+<class 'float'>
+
+• Booleanos: se representan entre los valores de verdad(True y False).
+
+- Importantantes para:
+ * Expresiones Condicionales.
+ * Ciclos(Bucles).
+
+- Type():
+
+<class 'bool'>
+bool = Booleano
+
+- Ejemplos:
+
+>>> type(True)
+<class 'bool'>
+>>> type(False)
+<class 'bool'>
+
+Cadenas de Caracteres
+---------------------
+
+¿Qué es una Cadena de Caracteres(String)?
+-----------------------------------------
+ Una cadena de caracteres es una secuencia de caracteres encerrados entre comillas y usados para representar texto en el programa.
+
+Ejemplo: "Python"/'Python'
+
+- Type():
+
+>>> type("Python")
+<class 'str'>
+str => String = Cadena(en referencia al texto)
+
+• No puedes mezclar las comillas dobles("") y las comillas simples('') en el código. 
+
+Ejemplos: 
+>>> "Python'
+SyntaxError: EOL while scanning string literal -> Cuando se estaba escaneando la cadena literal de caracteres.
+             ^
+	     	     |
+	      End of Line = Final de la Línea
+
+>>> 'Python"
+SyntaxError: EOL while scanning string literal
+
+• El valor de un entero no igual que una parte de cadena de caracteres. Ejemplo: 5 != "5"
+
+- Type():
+
+>>> type(5)
+<class 'int'>
+>>> type("5")
+<class 'str'>
+
+Tamaño(Length)
+--------------
+ Número de caracteres que posee, empezando desde 0 en adelante.
+
+• len(): calcula la longitud de la cantidad de caracteres que existen en el string.
+
+- Ejemplos:
+
+ len("") -> 0
+ len("A") -> 1
+ len("Hola") -> 4
+ len("Python") -> 6
+
+Indexación(Indexing)
+--------------------
+ Nos permite acceder a caracteres individuales de la cadena.
+
+- Sintaxis:
+
+<cadena>[<índice>]
+
+- Ejemplo:
+
+>>> palabra = "Python"
+>>> palabra[0]
+'P'
+>>> palabra[1]
+'y'
+>>> palabra[2]
+'t'
+>>> palabra[3]
+'h'
+>>> palabra[4]
+'o'
+>>> palabra[5]
+'n'
+>>> palabra[6]
+Traceback (most recent call last):
+  File "<pyshell#32>", line 1, in <module>
+    palabra[6]
+IndexError: string index out of range
+		|	
+		V
+IndexError: Índice de cadena de caracteres fuera de rango
+
+Rebanado(Slicing)
+-----------------
+ Nos permite obtener una rebanada(porción) de una cadena de caracteres.
+
+- Sintaxis:
+		 Índice que marca el fin de la rebanada.
+		 ^
+		 |
+<cadena>[inicio:fin]
+	 |
+	 V
+	Índice que marca el inicio de la rebanada.
+
+- Ejemplo:
+ 
+>>> palabra = "Python"
+>>> palabra[1:4]
+'yth'
+
+- Otras formas:
+ 
+<cadena>[inicio:]
+<cadena>[:fin]
+<cadena>[:]
+
+- Un tercer parametro:
+
+<cadena>[inicio:fin:paso]
+		    |
+		    V
+		   Cómo "saltar" de un caracter al siguiente.
+
+- Ejemplo:
+
+>>> palabra = "Python"
+>>> palabra[1:6:2]
+'yhn'
+
+Métodos
+.......
+
+¿Qué es son los Métodos de Cadena de Caracteres?
+------------------------------------------------
+ Son operaciones comunes que vienen implementadas en Python.
+
+- Sintaxis:
+
+<cadena>.<método>(<valores>)
+
+• Capitalize: Retorna una copia de la cadena con el primer carácter en mayúsculas y el resto minúsculas.
+
+- Sintaxis:
+
+<cadena>.capitalize()
+
+- Ejemplo:
+
+>>> palabra = "python"
+>>> palabra.capitalize()
+'Python'
+
+Métodos Importantes:
+--------------------
+• find: Busca una subcadena dentro de una cadena y devuelve el índice de la primera aparición. Si no se encuentra, devuelve -1.
+• index: Similar a find, busca una subcadena y devuelve el índice de la primera aparición, pero lanza una excepción ValueError si no se encuentra.
+• isalnum: Devuelve True si todos los caracteres de la cadena son alfanuméricos (letras y números) y hay al menos un carácter, de lo contrario devuelve False.
+• isalpha(): Devuelve True si todos los caracteres de la cadena son letras y hay al menos un carácter, de lo contrario devuelve False.
+• isdecimal(): Devuelve True si todos los caracteres de la cadena son caracteres decimales y hay al menos un carácter, de lo contrario devuelve False.
+• isdigit(): Devuelve True si todos los caracteres de la cadena son dígitos y hay al menos un carácter, de lo contrario devuelve False.
+• islower(): Devuelve True si todos los caracteres de la cadena están en minúsculas y hay al menos un carácter, de lo contrario devuelve False.
+• isupper(): Devuelve True si todos los caracteres de la cadena están en mayúsculas y hay al menos un carácter, de lo contrario devuelve False.
+• lower(): Convierte todos los caracteres de la cadena a minúsculas y devuelve una nueva cadena.
+• upper(): Convierte todos los caracteres de la cadena a mayúsculas y devuelve una nueva cadena.
+
+Recibiendo Datos del Usuario
+----------------------------
+• input(): Permite recibir los datos del usuario, y mostrarlo un mensaje descriptivo en consola.
+
+- Sintaxis:
+
+<var> = input(<mensaje>)
+
+- Ejemplo:
+
+num = input("Ingrese un Número: ")
+print(num)
+
+Ejecución:
+Ingrese un Número: 5
+5
+
+Advertencia: La función input() siempre retorna una cadena de caracteres.
+
+- Ejemplo:
+>>> num = input("Ingrese un Número: ")
+
+Ejecución:
+Ingrese un Número: 5
+5
+>>> type(num)
+<class 'str'>
+
+Solución:
+>>> num = int(input("Ingrese un Número: "))
+
+Ejecución:
+Ingrese un Número: 5
+5
+>>> type(num)
+<class 'int'>
+
+Operadores
+..........
+
+¿Qué es un Operador?
+------------------
+Un operador es un símbolo que denota una operación en el programa. Los operadores son esos valores con los cuales se ejecuta la operación.
+
+- Sintaxis:
+Operador + Operandos = Expresión
+
+¿Qué es una Expresión?
+----------------------
+Una expresión es una combinación de valores, variables, y operadores que al ser evaluados resultan en un valor.
+
+Las expresiones se evalúan de izquierda a derecha => 
+Excepto cuando ciertos operadores tienen mayor "importancia" para el orden de las operaciones.
+
+Operadores:
+-----------
+• Aritméticos
+• Lógicos
+• De Asignación
+• Relacionales
+
+Operadores Aritméticos
+----------------------
+ Nos permiten realizar operaciones aritméticas en el programa.
+
+Operadores Aritméticos son permiten hacer:
+• Suma
+• Resta
+• Multiplicación
+• División
+• División Entera
+• Exponente
+• Módulo
+
+Operador Suma(+)
+----------------
+>>> 5 + 6
+11
+>>> 2 + 3
+5
+>>> 6 + 8
+14
+>>> 3.4 + 5.6
+9.0
+
+También se puede usar para concatenar en cadena de caracteres.
+
+>>> "Hola" + " " + "Mundo"
+'Hola Mundo'
+
+Operador Resta(-)
+-----------------
+>>> 10 - 4
+6
+>>> 4 - 8
+-4
+>>> 0 - 6
+-6
+>>> 3.4 - 5.6
+-2.1999999999999997
+>>> 2 - 8.9
+-6.9
+
+Operador Multiplicación(*)
+--------------------------
+>>> 5 * 6
+30
+>>> 4 * 0
+0
+>>> -5 * -8
+40
+>>> -5 * 8
+-40
+>>> 4.5 * 7.9
+35.550000000000004
+
+Operador División(/)
+--------------------
+>>> 15 / 5
+3.0
+>>> 15 / 8
+1.875
+>>> 12.5 / 4
+3.125
+>>> 4 / 4.5
+0.88888888888888888
+>>> 4.2 / 4.1
+1.024390243902439
+
+🗒Nota: Siempre retorna un número de coma flotante.
+
+>>> 5 / 0
+Traceback (most recent call last):
+ File "<pyshell#123>", line 1, in <module>
+   5 / 0
+ZeraDivisionError: division by zero
+|
+V
+Error de división por Cero
+
+Operador División Entero(//)
+----------------------------
+Trunca el resultado de la división:
+>>> 15 // 5
+3
+>>> 3 // 5
+0
+>>> 157 // 56
+2
+>>> -4 // -6
+0
+>>> -15 // -10
+1
+
+El único caso donde no pueda retornar un número de coma flotante, si dividimos dos números de coma flotante:
+>>> 5.6 // 3.4
+1.0
+
+Se usa en aplicaciones de algoritmos de búsqueda binaria.
+
+Operador Exponente(**)
+----------------------
+>>> 5 ** 3
+125
+>>> 3 ** 8
+6561
+>>> 2 ** 3
+8
+>>> 4.5 ** 4.7
+1175.1649090387732
+>>> 16 ** (1/2)
+4.0
+>>> 5 ** 0
+1
+
+Regla matemática: Todo número elevado a 0 da como resultado 1.
+
+Operador Módulo(%)
+------------------
+Retorna el resto de la división. Es comúnmente utilizado para verificar si un número es par o impar.
+
+5|2
+ |-
+1|2
+
+>>> 5 % 2
+1
+>>> 4 % 3
+1
+>>> 16 % 4
+0
+>>> 16 % 6
+4
+>>> 18 % 4
+2
+
+🗒Nota: Para saber el orden en las operaciones, se toma un acrónimo llamado PEMDAS(Paréntesis/Parenthesis Exponentes/Exponents Multiplicación/Multiplication División/Division Suma/Addition Resta/Subtraction)
+
+Operadores Lógicos
+------------------
+ Nos permiten trabajar con valores booleanos(True y False). Estos son: and or not
+
+Operador and
+------------
+ Evalúa si el operador izquierdo y el derecho son verdaderos. 
+
+- Sintaxis: 
+ x and y
+
+TABLA DE VERDAD
+ _______________________
+|  X  |  Y  |  X and Y  |
+|_____|_____|___________|
+|True |True | True      |
+|_____|_____|___________|
+|True |False| False     |
+|_____|_____|___________|
+|False|True | False     |
+|_____|_____|___________|
+|False|False| False     |
+|_____|_____|___________|
+
+>>> (5 < 6) and (6 > 8)
+False
+
+Operador or
+-----------
+ Evalúa si cualquier operador de verdad son verdaderos.
+
+- Sintaxis:
+ x or y
+
+TABLA DE VERDAD
+ _______________________
+|  X  |  Y  |  X and Y  |
+|_____|_____|___________|
+|True |True | True      |
+|_____|_____|___________|
+|True |False| True      |
+|_____|_____|___________|
+|False|True | True      |
+|_____|_____|___________|
+|False|False| False     |
+|_____|_____|___________|
+
+>>> (5 < 6) or (6 > 8)
+True
+
+Oparador not
+------------
+ Nega el valor de la expresión.
+
+- Sintaxis:
+ not x
+
+TABLA DE VERDAD
+ __________________
+|   X    |  not X  |
+|________|_________|
+|True    |False    |
+|________|_________|
+|False   |True     |
+|________|_________|
+
+>>> not True
+False
+>>> not False
+True
+
+Prioridad:
+• not  | Mayor
+• and  |
+• or   |
+       V Menor
+
+Operadores de Asignación
+------------------------
+ Son utilizados para asignar valores a las variables del programa. Estos son:
+• Asignación de la Variable(=)
+• Asignación de Suma(+=)
+• Asignación de Resta(-=)
+• Asignación de Multiplicación(*=)
+• Asignación de División(/=)
+• Asignación de Exponente(**=)
+• Asignación de División Entera(//=)
+• Asignación de Módulo(%=)
+
+>>> edad = 56
+>>> edad += 3
+>>> edad
+59
+>>> edad -= 2
+>>> edad
+57
+>>> edad *= 3
+>>> edad
+171
+>>> edad /= 2
+>>> edad
+85.5
+
+Operadores Relacionales
+-----------------------
+ Son utilizados para comparar valores y retornar un valor booleano. Estos son: 
+• Mayor que(>)
+• Menor que(<)
+• Igual(==)
+• Mayor igual que(>=)
+• Menos igual que(<=)
+• No igual a(!=)
+
+>>> 5 > 6
+False
+>>> 10 > 3
+True
+
+>>> 5 > 5
+False
+>>> 5 >= 5
+True
+
+>>> 5 < 6
+True
+>>> 10 < 3
+False
+
+>>> 3 < 3
+False
+>>> 3 <= 3
+True
+
+>>> 8 == 8
+True
+>>> 8 != 8
+False
+
+>>> "Hola" == "Hola"
+True
+>>> "Hola" == "H"
+False
+
+>>> "ABC" < "A"
+False
+>>> "A" < "B"
+True
+>>> "B" > "A"
+True
+>>> "C" != "D"
+True
+>>> "Noris" == "Gino"
+False
+
+🗒Nota: Se toma en orden alfabetico.
+
+Sentencias Condicionales
+........................
+
+¿Qué es una Sentencia Condicional?
+----------------------------------
+ Una sentencia condicional es una instrucción o un grupo de instracciones cuya ejecución depende del valor de una condición booleana.
+
+					|
+					V
+	      Verdadera		    _________               Falsa
+	      ---------------------|Condición|--------------------
+	      |			   |_________|		         |	
+         _____________			 			 |
+        |Instrucciones|						 |
+	|_____________| 					 |
+	      |							 |
+	      |__________________________________________________|
+					|
+					V
+
+
+- Sintaxis:
+ if <condición>:
+  # Código
+
+- Ejemplo:
+>>> temp = 15
+>>> if temp < 25:
+        print("Frío")
+Frío
+>>> temp = 36
+>>> if temp < 25:
+	print("Frío")
+...
+
+Cláusula 'else'
+---------------
+
+					|
+					V
+	      Verdadera		    _________               Falsa
+	      ---------------------|Condición|--------------------
+	      |			   |_________|		         |	
+         _____________			 	          _______________
+        |Instrucciones|					 |Cláusula 'else'|
+	|_____________| 				 |_______________|
+	      |							 |
+	      |__________________________________________________|
+					|
+					V
+
+
+- Sintaxis:
+ if <condición>:
+     # Código
+ else:
+     # Código
+
+- Ejemplo:
+1 temp = 15
+2
+3 if temp < 25:
+4 	print("Frío")
+5 else:
+6 	print("Calor")
+Frío
+
+1 temp = 35
+2
+3 if temp < 25:
+4 	print("Frío")
+5 else:
+6 	print("Calor")
+Calor
+
+Cláusula 'elif'
+---------------
+
+- Sintaxis:
+ if <condición1>:
+ 	# Código
+ elif <condición2>:
+	# Código
+ else:
+	# Código
+
+- Ejemplo:
+1 temp = 0
+2
+3 if temp <= 0:
+4 	print("Muy Frío")
+5 elif temp < 25:
+6	print("Frío")
+7 else:
+8	print("Calor")
+9
+Muy Frío
+
+1 temp = 15
+2
+3 if temp <= 0:
+4 	print("Muy Frío")
+5 elif temp < 25:
+6	print("Frío")
+7 else:
+8	print("Calor")
+9
+Frío
+
+1 temp = 35
+2
+3 if temp <= 0:
+4 	print("Muy Frío")
+5 elif temp < 25:
+6	print("Frío")
+7 else:
+8	print("Calor")
+9
+Calor
+
+🗒Nota: Puede haber más de una cláusula 'elif', pero solo una cláusula 'else'.
+
+- Sintaxis:
+ if <condición1>:
+	# Código
+ elif <condición2>:
+	# Código
+ elif <condición3>:
+	# Código
+ elif <condición4>:
+	# Código
+ else:
+	# Código
+
+Comentarios
+...........
+
+¿Qué es un Comentario?
+----------------------
+ Un comentario es un texto que se escribe en el programa para facilitar su comprensión. No son parte del código.
+
+Propósito:
+ Describir la lógica de ciertas partes del código a otros programadores que lean el programa. Este es un comentario en Python: # Comentario
+
+- Ejemplo:
+# Número de estudiantes
+# registrados en el salón 56
+num_estudiantes = 33
+
+🗒Nota: No comentar en exceso.
+
+- Ejemplo:
+# Temperatura inicial 56
+temp = 56
+
+# Si la temperatura es mayor
+# a 60, mostrar mensaje "Caliente"
+if temp > 60:
+	print("Caliente")
+# Si la temperatura es mayor
+# a 35, mostrar mensaje "Normal"
+elif temp > 35:
+	print("Normal")
+# Si la temperatura es menor o igual
+# a 35, mostrar mensaje "Frío"
+else:
+	print("Frío")
+
+Listas
+......
+
+¿Qué es una Lista?
+------------------
+ Una lista una estructura de datos utilizada para almacenar múltiples valores en secuencia.
+
+- Ejemplo:
+[1, 2, 3, 4]
+
+- Secuencia ordenada:
+["a", "b", "c"]
+ [0]  [1]  [2] -> 1+
+    Indices
+
+- Características:
+• Secuencia ordenada de valores.
+• Puede contener valores de cualquier tipo.
+• Puede contener valores de distintos tió
+• Cada posición en la lista está asociada a un entero llamado "índice".
+• Es mutable. Puede ser modificada.
+
+Acceder a un Elemento
+---------------------
+ Para acceder a un elemento de la lista, usamos su índice correspondiente.
+
+- Sintaxis:
+<lista>[<índice>]
+
+- Ejemplo:
+["a", "b", "c", "d"]
+ [0]  [1]  [2]  [3]
+
+>>> letras = ["a", "b", "c", "d"]
+>>> letras[0]
+'a'
+>>> letras[1]
+'b'
+>>> letras[2]
+'c'
+>>> letras[3]
+'d'
+
+Agregar un Elemento
+-------------------
+Existen dos opciones:
+ 1. Al final de la lista.
+ 2. En un índice específico.
+
+1.
+
+- Sintaxis:
+ <lista>.append(<elem>)
+
+• append(): añade un elemento al final de la lista.
+
+- Ejemplo:
+>>> nums = [1, 2, 3, 4]
+>>> nums.append(5)
+>>> nums
+[1, 2, 3, 4, 5]
+
+2. 
+
+- Sintaxis:
+ <lista>.insert(<índice>, <elem>)
+
+• insert(): inserta un elemento único en una lista existente en una posición específica.
+
+- Ejemplo:
+>>> nums = [1, 2, 3, 4, 5]
+>>> nums.insert(0, 6)
+>>> nums
+[6, 1, 2, 3, 4, 5]
+
+Remover un Elemento
+-------------------
+
+- Sintaxis:
+ <lista>.remove(<elem>)
+
+• remove(): elimina un elemento de una lista.
+
+- Ejemplo:
+>>> a = [1, 2, 3, 4, 5, 4]
+>>> a.remove(4)
+>>> a
+[1, 2, 3, 5, 4]
+
+>>> a = [1, 2, 3, 4, 5, 4]
+>>> a.remove(9)
+Traceback (most recent call last):
+ File "<pyshell#18>", line 1, in <module>
+   a.remove(9)
+ValueError: list.remove(x) : x not in list
+	|
+Error de Valor: list.remove(x): x no está in la lista
+
+Encontrar un Elemento
+---------------------
+
+- Sintaxis:
+ <elem> in <lista>
+
+- Ejemplo:
+>>> vocales = ['a', 'e', 'i', 'o', 'u']
+>>> 'a' in vocales
+True
+>>> 'z' in vocales
+False
+
+.index()
+--------
+
+- Sintaxis:
+ <lista>.index(<elem>)
+
+• index(): retorna el índice de la primera ocurrencia del elemento en la lista. Si no se encuentra el elemento, ocurre un error.
+
+- Ejemplo:
+>>> vocales = ['a', 'e', 'i', 'o', 'u']
+>>> vocales.index('i')
+2
+
+>>> vocales = ['a', 'e', 'i', 'o', 'u']
+>>> vocales.index('z')
+Traceback (most recent call last):
+  File "<pyshell#3>", line 1, in <module>
+    vocales.index('z')
+ValueError: 'z' is not in list
+
+Cambiar un Elemento
+-------------------
+
+Mutable
+-------
+ Pueden ser cambiadas. Sus elementos pueden ser modificados.
+
+- Sintaxis:
+ <lista>[<índice>] = <nuevo_valor>
+
+- Ejemplo:
+>>> nums = [1, 2, 3, 4, 5]
+>>> nums[0] = -8
+>>> nums
+[-8, 1, 2, 3, 4, 5]
+
+Métodos de las Listas
+---------------------
+ Los métodos de las listas son operaciones comunes de listas que ya están implementadas en Python.
+
+- Sintaxis:
+ <lista>.<método>(<parámetros>)
+
+Métodos Importantes:
+• .count(): Devuelve el número de veces que un elemento aparece en una lista.
+• .extend(): Agrega todos los elementos de una lista al final de otra lista.
+• .pop(): Elimina y devuelve el elemento en la posición especificada (por defecto, el último elemento).
+• .reverse(): Invierte el orden de los elementos en la lista.
+• .sort(): Ordena los elementos de la lista en orden ascendente (modificable con parámetros).
+
+- Ejemplos:
+>>> lista = [1, 2, 2, 3, 4, 2]
+>>> lista.count(2)  # Devuelve 3
+
+>>> lista1 = [1, 2, 3]
+>>> lista2 = [4, 5]
+>>> lista1.extend(lista2)  # lista1 ahora es [1, 2, 3, 4, 5]
+
+>>> lista = [1, 2, 3, 4]
+>>> lista.pop()  # Devuelve 4 y lista ahora es [1, 2, 3]
+>>> lista.pop(1)  # Devuelve 2 y lista ahora es [1, 3]
+
+>>> lista = [1, 2, 3, 4]
+>>> lista.reverse()  # lista ahora es [4, 3, 2, 1]
+
+>>> lista = [4, 2, 3, 1]
+>>> lista.sort()  # lista ahora es [1, 2, 3, 4]
+>>> lista.sort(reverse=True)  # lista ahora es [4, 3, 2, 1]
+
+Tuplas
+......
+
+¿Qué es una Tupla?
+------------------
+ Una tupla es una estructura de datos inmutable que contiene una secuencia ordenada de elementos.
+
+- Ejemplo:
+ (1, 2, 3, 4)
+
+- Secuencia ordenada:
+ ("a", "b", "c")
+  [0]  [1]  [2]
+     Indices
+
+- Características:
+ • Secuencia ordenada de valores.
+ • Puede contener valores de cualquier tipo de datos.
+ • Puede contener valores de distintos tipos de datos.
+ • Cada posición de la tupla se identifica con un entero denominado "índice".
+ • Es inmutable. No puede ser modificada.
+
+🗒Nota: Inmutable = No Puede Cambiar
+
+>>> a = (1, 2, 3, 4)
+>>> a[0] = 5
+Traceback (most recent call last):
+  File "<pyshell#15>", line 1, in <module>
+    a[0] = 5
+TypeError: 'tuple' object does not support item assigment
+
+Acceder a un Elemento
+---------------------
+ Si bien no se pueden cambiar, sí acceder y ver sus valores con su indíce.
+
+- Ejemplo:
+>>> letras = ("A", "B", "C")
+>>> letras[0]
+'A'
+>>> letras[1]
+'B'
+>>> letras[2]
+'C'
+
+Encontrar un Elemento
+---------------------
+ También se puede encontrar un elemento en la tupla, haciendo lo mismo como en las listas.
+
+- Sintaxis:
+ <elem> in <tupla>
+
+- Ejemplo:
+>>> letras = ("a", "b", "c", "d")
+>>> "a" in letras
+True
+>>> "b" in letras
+True
+>>> "z" in letras
+False
+>>> "x" in letras
+False
+
+.index()
+--------
+ También podemos hacer lo mismo, usando el método index().
+
+- Sintaxis:
+ <tupla>.index(<elem>)
+
+- Ejemplo:
+>>> letras = ("a", "b", "c", "d")
+>>> letras.index("a")
+0
+>>> letras.index("b")
+1
+>>> letras.index("z")
+Traceback (most recent call last):
+  File "<pyshell#31>", line 1, in <module>
+    letras.index("z")
+ValueError: tuple.index(x): x is not in tuple
+
+.count()
+--------
+
+- Sintaxis:
+ <tupla>.count(<elem>)
+
+- Ejemplo:
+>>> nums = (3, 5, 2, 8, 4, 6, 3, 2)
+>>> nums.count(3)
+2
+
+Diccionarios
+............
+
+¿Qué es un Diccionario?
+-----------------------
+ Un diccionario es una colección de pares clave-valor.
+
+- Ejemplo:
+Par Clave-Valor
+  |
+ -------
+{"A": 45, "B": 30}
+  |   |	   ------
+Clave Valor  |
+            Par Clave-Valor
+
+Clave -> Valor
+"A"      45
+
+Características:
+• Colección de Pares Clave-Valor
+• Las claves deben ser únicas e inmutables.
+• Los valores asociados pueden ser de cualquier tipo.
+• La clave se usa para acceder a su valor asociado.
+• Los pares clave-valor pueden ser modificados, añadidos, y eliminados.
+
+Acceder a un Valor
+------------------
+
+- Sintaxis:
+ <diccionario>[<clave>] -> Valor
+
+- Ejemplo:
+>>> edades = {"Gino": 15, "Nora": 45}
+>>> edades["Gino"]
+15
+>>> edades["Nora"]
+45
+
+- Alternativa(get()):
+>>> edades = {"Gino": 15, "Nora": 45}
+>>> edades.get("Gino")
+15
+
+Añadir y Modificar
+------------------
+
+Añadir
+------
+- Sintaxis:
+ <diccionario>[<nueva_clave>] = <nuevo_valor>
+
+- Ejemplo:
+
+>>> edades = {"Gino": 15, "Nora": 45}
+>>> edades["Talina"] = 67
+>>> edades
+{'Gino': 15, 'Nora': 45, 'Talina': 67}
+
+Modificar
+---------
+ Si la clave ya existe, se modifica su valor.
+
+- Sintaxis:
+ <diccionario>[<clave>] = <nuevo_valor>
+
+- Ejemplo:
+>>> edades = {"Gino": 15, "Nora": 45}
+>>> edades["Gino"] = 17
+>>> edades
+{'Gino': 17, 'Nora': 45}
+
+Remover
+-------
+
+- Sintaxis:
+ del <diccionario>[<clave>]
+
+- Ejemplo:
+>>> edades = {"Gino": 15, "Nora": 45}
+>>> del edades["Gino"]
+>>> edades
+{'Nora': 45}
+
+Revisar Existencia
+------------------
+
+- Sintaxis:
+ <elem> in <diccionario>
+
+- Ejemplo:
+>>> edades = {"Gino": 15, "Nora": 45}
+>>> "Gino" in edades
+True
+>>> "Emily" in edades
+False
+>>> "Nora" in edades
+True
+
+Documentación
+.............
+
+Documentación Principal
+-----------------------
+https://docs.python.org/es/3.12/
+
+Tutorial
+--------
+https://docs.python.org/es/3.12/tutorial/index.html
+
+Biblioteca Estándar de Python
+-----------------------------
+https://docs.python.org/es/3.12/library/index.html
+
+Referencia del Lenguaje Python
+------------------------------
+https://docs.python.org/es/3.12/reference/index.html
+
+Ciclos For
+..........
+
+¿Cuál es el propósito de un Ciclo?
+----------------------------------
+ El prosósito de un ciclo llega a ser una estructura de control en programación que permite ejecutar una o varias líneas de código múltiples veces.
+
+¿Cuándo usamos un Ciclo For?
+----------------------------
+ Los usamos cuando sabemos con antelación *cuántas veces* debemos repetir ciertas instrucciones.
+
+- Lógica Básica:
+	 ______
+	|Inicio|
+	|______|
+	   |
+	   V
+	_________
+ Falso |Evaluar  |
+-------|Condición|<---------
+|      |_________|         |
+|          | Verdadero     |
+|	   V               |
+|     _____________        |
+|    |Instrucciones|_______|
+|    |_____________|
+|     ________________
+|--->|Ciclo se Detiene|
+     |________________|
+           |
+           V
+         _____
+	| Fin |
+	|_____|
+
+¿Qué es una Iteración?
+----------------------
+ Una iteración es la repetición de un conjunto de instrucciones en un programa dentro un ciclo.
+
+- Sintaxis del ciclo for:
+ for <var> in range(<inicio>, <fin>):
+	# Código
+
+Variable de Control:
+• Variable que puede ser utilizada en el código que se va a repetir.
+• Se actualiza automáticamente antes de cada iteración.
+• Debe tener un nombre descriptivo.
+
+Range
+-----
+
+- Ejemplo:
+ for i in range(4):
+	print(i)
+
+>>> for i in range(4):
+	print(i)
+0
+1
+2
+3
+
+• range(): Retorna una secuencia de números enteros.
+
+- Analizando la lógica de range():
+range(4)-> 0, 1, 2, 3
+      |
+     fin
+0, 1, 2, 3
+|	 |
+Default fin -1
+
+
+Variable
+de Control Ilustración de range(4)
+    |        |
+for i in 0, 1, 2, 3:
+	print(i) <- El valor se actualiza en cada iteración
+
+• 1era Iteración: i = 0
+• 2da Iteración: i = 1
+• 3era Iteración: i = 2
+• 4ta Iteración: i = 3
+
+- Sintaxis de range() con tres paramentros desde Python Docs:
+ range(start, stop[, step])
+
+• start: El valor del parámetro start(0 si no se utliza el parámetro).
+• stop: El valor del parámetro stop.
+• step: El valor del parámetro step(1 si no se utiliza el parámetro).
+
+Ciclos sobre Iterables
+----------------------
+
+¿Qué es un Iterable?
+--------------------
+ Un iterable es un elemento que retorna sus elementos uno a la vez.
+
+Para iterar sobre:
+• Cadenas de Caracteres.
+• Listas.
+• Tuplas.
+• Diccionarios.
+• Otros...
+
+- Esquema:	 __________
+ ________      _|	   |_
+|Elemento| -> | Variable de  |		
+|________|    |_  Control   _|
+	        |__________|
+
+- Sintaxis:
+ for <var> in <iterable>:
+	# Código
+
+- Ejemplo Visual:
+ for char in "Loops":
+  ______________
+ |Iteration|Char|
+ |_________|____|
+ |    1    |'L' |
+ |_________|____|
+ |    2    |'o' |
+ |_________|____|
+ |    3    |'o' |
+ |_________|____|
+ |    4    |'p' |
+ |_________|____|
+ |    5    |'s' |
+ |_________|____|
+
+- Ejemplo en Código:
+>>> for char in "Loops":
+	print(char)
+L
+o
+o
+p
+s
+
+- Ejemplo en Listas:
+>>> for num in [1, 2, 3]:
+	print(num)
+1
+2
+3
+
+- Ejemplo en Tuplas:
+>>> for num in (1, 2, 3):
+	print(num)
+1
+2
+3
+
+- Ejemplo en Diccionarios:
+>>> letras = {"a": 1, "b": 2}
+>>> for clave in letras:
+	print(clave)
+
+Iterar sobre:
+• Claves
+• Valores
+• Pares Clave-Valor
+
+- Ejemplo en PyShell:
+>>> letras = {"a": 1, "b": 2}
+>>> for clave in letras: 
+...	print(clave)
+...
+a
+b
+>>> for valor in letras.values():
+...	print(valor)
+...
+... 
+1
+2
+>>> for clave, valor in letras.items():
+...	print(clave, valor)
+...
+... 
+a 1
+b 2
+
+Ciclo While
+...........
+ El ciclo while es un tipo de ciclo que continúa mientras una condición es verdadera y se detiene cuando es falsa.
+
+🗒Nota: Si el ciclo no deja de ser nunca verdadera, puede ocurrir un ciclo Infinito(Infinite Loop), del cual hay que tener mucho cuidado para sobre cargar a la maquina.
+
+- Sintaxis:
+ while <condición>:
+     # Código
+|
+Indentación(nivel de espaciado)
+
+Iteraciones
+-----------
+ En número de iteraciones un ciclo while no tiene un número fijo o predeterminado de iteraciones cuando empiece a ejecutarse. Se ejecuta hasta que la condición es falsa.
+
+Lógica Básica:
+
+	 ______
+	|Inicio|
+	|______|
+	   |
+	   V
+	_________
+ Falso |Evaluar  |
+-------|Condición|<---------
+|      |_________|         |
+|          | Verdadero     |
+|	   V               |
+|     _____________        |
+|    |Instrucciones|_______|
+|    |_____________|
+|     ________________
+|--->|Ciclo se Detiene|
+     |________________|
+           |
+           V
+         _____
+	| Fin |
+	|_____|
+
+Variable de Control
+-------------------
+ Los ciclos while no actualizan la(s) variable(s) de control automáticamente. Deben ser actualizadas en el cuerpo del ciclo.
+
+Ejemplo:
+1 x = 20
+2
+3 while x < 35:# 35 < 35 False
+4     print(x) # 32
+5     x += 3   # 35
+6
+
+Funciones
+.........
+
+¿Qué es una Función?
+--------------------
+ Una función es un bloque de código reutilizable que realiza una sola tarea específica.
+
+Esquema de como sería una función:
+ ______________
+|  __________  |
+| |  Tarea   | |
+| |__________| |     
+|  __________  |
+| |  Tarea   | |
+| |__________| |      
+|  __________  |
+| |  Tarea   | |
+| |__________| |      
+|  __________  |
+| |  Tarea   | |
+| |__________| |      
+|  __________  |
+| |  Tarea   | |
+| |__________| |      
+|  __________  |
+| |  Tarea   | |
+| |__________| |
+|______________|
+
+DRY(Don't Repeat Yourself)
+--------------------------
+ En programación, existe un principio que debemos evitar repetir código sino es necesario y minimizarlo.
+
+Esquema de una función siendo reutilizada:
+------------------------------------------
+              ___________
+	     | _________ |
+tarea------->|| tarea() ||
+ ________ |  ||_________||
+|Haz Esto||  | _________ |
+|________||->|| tarea() ||
+          |  ||_________||
+          |  | _________ |
+          |->|| tarea() ||
+          |  ||_________||
+          |  | _________ |
+          |->|| tarea() ||
+          |  ||_________||
+          |  | _________ |
+          |->|| tarea() ||
+          |  ||_________||
+          |  | _________ |
+          |->|| tarea() ||
+             ||_________||
+             |___________|
+
+Ventajas:
+• Reusable
+• Conciso
+• Leíble
+• Mantenible
+• Comprobable
+
+- Sintaxis:
+ def <función>():
+     # Código
+
+- Ejemplo:
+ def mostrar_mensaje():
+   print("¡Hola, Mundo!")
+
+Llamar a un Función
+-------------------
+ Cuando llamamos a una función, ejecutamos el código del cuerpo de la función.
+
+- Sintaxis:
+<nombre_de_la_función>()
+
+- Ejemplo:
+>>> def mostrar_mensaje():
+        print("¡Hola, Mundo!")
+
+>>> mostrar_mensaje()
+¡Hola, Mundo!
+>>> mostrar_mensaje()
+¡Hola, Mundo!
+>>> mostrar_mensaje()
+¡Hola, Mundo!
+
+Esquema gráfico llamando entre el programa principal y la función:
+ _______________________________________
+| ________				|
+||Programa|	      ^	|		|
+||________| __________|_V______________ |
+|          | _______	 	       ||
+|          ||Función|                  ||
+|          ||_______|                  ||
+|          |                           ||
+|          |                           ||
+|          |                           ||
+|          |___________________________||
+|_______________________________________|
+
+Dentro de lo que se componen las funciones entre parentesis, se llama "parámetros" y valores que le pasamos se denoniman "argumentos".
+
+ __________
+|Parámetros|
+|__________|
+ __________
+|Argumentos|
+|__________|
+
+¿Qué es un Parámetro?
+---------------------
+ Un parámetro es una variable que se incluye en la definición de la función para representar y guardar un valor que podemos pasar cuando llamamos a la función.
+
+ _________    __________
+|Parámetro|->|Definición|
+|_________|  |  de la   |
+             | Función  |
+             |__________|
+
+- Sintaxis:
+ def <función>(<parámetro>):
+     # Código
+     |
+    El parámetro puede ser usado en el cuerpo de la función como cualquier otro variable.
+
+- Ejemplo:
+ def mostrar_doble(num):
+     print(num * 2)
+
+ Si necesitamos tomar varios parámentos, deben estar sepados por comas.
+ ____________    ___________
+|   Varios   |  | Separados |
+| Parámetros |->| por Comas |
+|____________|  |___________|
+
+- Ejemplo:
+ def sumar(x, y):
+     print(x + y)
+
+ Si bien estos valores estan creados en el código, no están recibiendo ningun argumentos para ser usados.
+
+¿Qué es un Argumento?
+---------------------
+ Un argumento es un valor que asignamos a un parámetro cuando llamamos a una función.
+ __________    ____________
+|Argumentos|->|  Llamada   |
+|__________|  |a la función|
+              |____________|
+
+ Los argumentos son asignados a sus correspondientes parámetros.
+
+Definición de la Función:
+  def sumar(x, y):
+     print(x + y)
+
+Llamada a la Función:
+  sumar(4, 5)
+
+- Ejemplo:
+>>> def sumar(x, y):
+        print(x + y)
+
+>>> sumar(4, 5)
+9
+
+Diferencia entre Parámentros y Argumentos
+-----------------------------------------
+ Los parámetros se incluyen en la definición de la función, mientras que los argumentos se incluyen en la llamada de la función, y por ende, los argumentos sin asignados a los parámetros.
+ __________    __________
+|Parámetros|->|Definición|
+|__________|  |__________|
+
+ __________    _______
+|Argumentos|->|Llamada|
+|__________|  |_______|
+
+Esquema gráfico de la función retornando en el programado:
+ _______________________________________
+| ________				|
+||Programa|	      ^			|
+||________| __________|________________ |
+|          | _______	 	       ||
+|          ||Función|                  ||
+|          ||_______|                  ||
+|          |                           ||
+|          |                           ||
+|          |                           ||
+|          |___________________________||
+|_______________________________________|
+
+ El propósito de esta comunicación es que la función retorne un valor luego de completar la tarea.
+
+- Sintaxis:
+ def <función>(<params>):
+     # Código
+     return <valor>
+
+- Ejemplo:
+>>> def sumar(x, y):
+        return x + y
+
+>>> resultado = sumar(4, 5)
+>>> resultado
+9
+
+🗒Nota: Cuando se ejecuta 'return', la ejecución de la función se detiene inmediatamente.
+
+Si no hay 'return', por defecto será el valor None.
+
+- Ejemplo:
+>>> def sumar(x, y):
+        print(x + y)
+
+
+>>> resultado = sumar(4, 5)
+9
+>>> print(resultado)
+None
+
+En el shell interactivo, el valor retornado por la llamada a una función no se muestra si se asigna a una variable. Para ver el valor, se tiene que usar la función print()
+
+Alcance de una Variable(Scope)
+------------------------------
+ El Scope es el alcance que tendrá la variable en el programa. Dónde se podrá usar. Determina a qué variables se tiene acceso en cada parte del programa.
+
+Tipos de Scope
+--------------
+ Existen dos tipos:
+		  ______
+	    |--->|Global|
+	    |	 |______|
+            |
+ _________  |
+|Variables|-|
+|_________| |
+            |
+            |     _____
+            |--->|Local|
+		 |_____|
+
+Scope Global
+------------
+ • Definición: Variables definidas fuera de funciones, accesibles en todo el programa.
+ • Uso: Para datos que deben ser accesibles en cualquier parte del código.
+
+Scope Local
+-----------
+ • Definición: Variables definidas dentro de funciones, accesibles solo dentro de esas funciones.
+ • Uso: Para datos temporales utilizados únicamente dentro de una función específica.
+
+Esquema:
+ _______________________________________
+| ________	  ____________		|
+||Programa|	 |Scope Global|		|
+||________|      |____________|         |
+|	    ___________________________ |
+|          | _______	 ___________   ||
+|          ||Función|   |Scope Local|  ||
+|          ||_______|   |___________|  ||
+|          |                           ||
+|          |                           ||
+|          |                           ||
+|          |___________________________||
+|_______________________________________|
+
+- Ejemplo:
+
+ x = 10  # Variable global
+ 
+ def mi_funcion():
+     y = 5  # Variable local
+     print(x, y) 
+ 
+ mi_funcion()
+ print(x)
+ # print(y)  # Error: 'y' es local
+
+Recursión
+.........
+
+¿Qué es una Recursión?
+----------------------
+ La recursión sería definir algo en términos de sí mismo.
+
+Vamos aplicar este concepto, aplicando la sucesión de fibonacci:
+ 0, 1, 1, 2, 3, 5, 8, 13, 21, ...
+
+- Sintaxis:
+ fib(n) = fib(n-1) + fib(n-2)
+
+🗒Nota: La sucesión inicia con 0 y 1.
+
+Función Recursiva
+-----------------
+En programación se le llama "Función Recursiva" cuando una función que se llama a sí misma. Los funciones recursivas tienen dos elementos principales en su estructura:
+• Caso Base: permite que el proceso se detenga.
+• Caso Recursivo: permite descomponer un problema a un versión más pequeña.
+
+- Ejemplo:
+ def fibonacci(n):
+     if n == 0 or n == 1:
+         return n # Caso Base
+     else:
+         return fibonacci(n-1) + fibonacci(n-2) # Caso Recursivo
+
+ # n = posición en la sucesión(iniciando en 0)
+ #   0, 1, 1, 2, 3, 5, 8, 13, 21, ...
+ # n 0  1  2  3  4  5  6  7   8
+
+- Lógica del fibonacci:
+>>> def fibonacci(n):
+        if n == 0 or n == 1:
+                return n
+        else:
+                return fibonacci(n-1) + fibonacci(n-2)
+
+>>> fibonacci(2)
+1
+>>> fibonacci(3)
+2
+
+Archivos
+........
+ Para trabajar con un archivo en Python se usa la sentencia 'with'.
+Sentencia 'with'
+----------------
+ Un sentencia with nos permite abrir un archivo y luego cerrarlo automáticamente.
+
+- Sintaxis:
+ with open("<nombre_archivo>.txt", "r") as archivo:
+     # Trabajar con el archivo
+
+- Ejemplo:
+ with open("frases_famosas.txt") as archivo: # Sino se pone un segundo parámetro, será "r" por defecto.
+     for linea in archivo:
+         print("==== Frase ====")
+         print(linea)
+
+Modos de Apertura de Archivos:
+• r(read - leer)
+• w(write - escribir)
+• a(append - añadir)
+• Agregar un + incluye leer. Por ejemplo, w+ es leer y escribir.
+
+Modificar Archivos
+------------------
+ Existen dos formas:
+1. Reemplazar Contenido
+2. Añadir Contenido
+
+1.
+
+- Sintaxis:
+ with open("<nombre_archivo>.txt", "w") as archivo:
+     # Trabajar con el archivo
+
+# archivo.write(<contenido>)
+
+- Ejemplo:
+1  notas = {
+2      "Nora": 87,
+3      "Gino": 100,
+4      "Loretto": 67,
+5      "Talina": 45
+6  }
+7  
+8  with open("data_estudiantes.txt", "w") as archivo:
+9      for nombre, nota in notas.items():
+10         archivo.write(nombre + " - " + str(nota) + "\n")
+11
+
+- Resultado en el archivo data_estudiantes.txt:
+  Nora - 87
+  Gino - 100
+  Loretto - 67
+  Talina - 45
+
+2. 
+
+- Sintaxis:
+ with open("<nombre_archivo>.txt", "a") as archivo:
+     # Trabajar con el archivo
+
+- Ejemplo:
+1  nuevas_notas = {
+2       "Emily": 54,
+3       "Daniel": 98,
+4       "Julienne": 78
+5  }
+6  
+7  with open("data_estudiantes.txt", "a") as archivo:
+8      for nombre, nota in nuevas_notas.items():
+9          archivo.write(nombre + " - " + str(nota) + "\n")
+10
+
+- Resultado en el archivo data_estudiantes.txt:
+  Nora - 87
+  Gino - 100
+  Loretto - 67
+  Talina - 45
+  Emily - 54
+  Daniel - 98
+  Julienne - 78
+
+Importaciones
+.............
+ Las importaciones en Python se dividen en módulos.
+
+¿Qué es un Módulo?
+------------------
+ Un módulo en Python es un archivo que contiene definiciones (como funciones, clases y variables) y sentencias ejecutables. Los módulos se utilizan para organizar y reutilizar código relacionado, facilitando la gestión y la estructura del programa.
+
+¿Qué es el Proceso de Importanción?
+-----------------------------------
+ Un proceso de importación es una sentencia que da acceso a las funciones y constantes definidas en el módulo importado.
+
+- Sintaxis:
+ import <módulo>
+
+- Llamada a una función:
+ <módulo>.<función>(<args>)
+
+- Ejemplo:
+>>> import math
+>>> math.pow(9, 2)
+81.0
+
+- Llamada a una constante:
+ <módulo>.<constante>
+
+- Ejemplo:
+>>> import math
+>>> math.pi
+3.141592653589793
+
+- Sintaxis Alternativa:
+ import <módulo> as <nombre_alternativo>
+ 
+- Llamada a una función y una constante:
+ <nombre_alternativo>.<función>(<args>)
+ <nombre_alternativo>.<constante>
+
+- Ejemplo:
+>>> import math as matematicas
+>>> matematicas.pow(9,2)
+81.0
+>>> matematicas.pi
+3.141592653589793
+
+- Sintaxis para Importar Elementos:
+ from <módule> import <elemento>
+
+- Ejemplo:
+>>> from math import pow
+>>> pow(9,2)
+81.0
+
+- Sintaxis muy usada pero que no es recomentadad☣:
+ from <módulo> import *
+
+Errores y Excepciones
+.....................
+
+SyntaxError
+-----------
+ SyntaxError es un error en la sintaxis del programa. Ocurre cuando no se siguen las reglas formales para escribir código en Python.
+
+- Ejemplos:
+>>> x =% 3
+SyntaxError: invalid syntax
+
+- Ejemplo en IDLE:
+1  x = 5
+2
+3  if x > 15❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
+4      print("Mayor que 15")
+5  else:
+6      print("Menor que 15")
+7
+8
+9
+10
+11
+
+-- Mensaje de Error:
+   ________________
+  |SyntaxError     |
+  |________________|
+  |❌invalid syntax|
+  |                |
+  |           ____ |
+  |          | OK ||
+  |          |____||
+  |________________|
+
+- String:
+>>> "Hello'
+SystaxError: EOL while scanning string literal.
+
+- Ejemplo en IDLE:
+1  def contar_numeros_pares(lista):
+2          total = 0
+3
+4          for num in lista:  
+5 ❌❌❌❌❌if num % 2 == 0:
+6              total += 1
+7
+8          return total
+9
+10
+11
+
+-- Mensaje de Error:
+   _____________________________
+  |SyntaxError                  |
+  |_____________________________|
+  |❌expected an indentead block|
+  |                             |
+  |                     ____    |
+  |                    | OK |   |
+  |                    |____|   |
+  |_____________________________|
+
+Excepción
+---------
+
+¿Qué es una Excepción?
+----------------------
+ Una excepción es un error detectado durante la ejecución de un programa.
+
+IndexError
+----------
+>>> "Hola, Mundo"[45]
+Traceback (most recent call last):
+  File "<pyshell#5>", line 1, in <module>
+    "Hola, Mundo"[45]
+IndexError: string index out of range
+
+KeyError
+--------
+>>> puntos = {"Gino": 235, "Nora 435, "Lulu": 342}
+>>> puntos["Jack"]
+Traceback (most recent call last):
+  File "<pyshell#10>", line 1, in <module>
+    puntos["Jack"]
+KeyError: 'Jack'
+
+NameError
+---------
+>>> lista_colores
+Traceback (most recent call last):
+  File "<pyshell#3>", line 1, in <module>
+    lista_colores
+NameError: name 'lista_colores' is not defined
+
+ZeroDivisionError
+-----------------
+>>> 5 / 0
+Traceback (most recent call last):
+  File "<pyshell#0>", line 1, in <module>
+    5 / 0
+ZeroDivisionError: division by zero
+
+RecursionError
+--------------
+>>> def factorial(n):
+        if n == 0 or n == 1:
+                return 1
+        else:
+                return n * factorial(n)
+
+>>> factorial(5)
+Traceback (most recent call last):
+  File "<pyshell#8>", line 1, in <module>
+    factorial(5)
+  File "<pyshell#7>", line 5, in factorial
+    return n * factorial(n)
+  File "<pyshell#7>", line 5, in factorial
+    return n * factorial(n)
+  File "<pyshell#7>", line 5, in factorial
+    return n * factorial(n)
+   [Previus line repeated 1021 more times]
+   File "<pyshell#7>", line 2, in factorial
+     if n == 0 or n == 1:
+RecursionError: maximum recursion depth exceeded in comparison
+
+Cláusulas try except
+--------------------
+
+- Sintaxis:
+ try:
+     # Intenta ejecutar este código
+ except:
+     # Si ocurre una excepción, detente
+     # inmediatamente y ejecuta éste código
+
+- Ejemplo:
+1 num1 = int(input("Ingrese un número: "))
+2 num2 = int(input("Ingrese otro número: "))
+3
+4 try:
+5     resultado = num1 / num2
+6     print(f"{num1} / {num2} =", resultado)
+7 except:
+8     print("Alerta, Excepción.")
+9
+
+- Resultado en try:
+
+Ingrese un número: 4
+Ingrese otro número: 5
+4 / 5 = 0.8
+
+- Resultado en except:
+
+Ingrese un número: 3
+Ingrese otro número: 0
+Alerta, Excepción.
+
+- Sintaxis para especificar el tipo de excepción:
+ try:
+     # Intenta ejecutar este código
+ except <tipo_de_excepción>:
+     # Si ocurre una excepción de este tipo,
+     # detente inmediatemente y ejecuta
+     # éste código
+
+- Ejemplo:
+1 num1 = int(input("Ingrese un número: "))
+2 num2 = int(input("Ingrese otro número: "))
+3
+4 try:
+5     resultado = num1 / num2
+6     print(f"{num1} / {num2} =", resultado)
+7 except ZeroDivisionError: # Tipo de Excepción
+8     print("Alerta, Excepción.")
+9
+
+- Sintaxis para asignar una variable:
+ try:
+     # Intenta ejecutar este código
+ except <tipo_de_excepción> as <var>:
+     # Si ocurre una excepción de este tipo,
+     # detente inmediatemente y ejecuta
+     # éste código
+
+- Ejemplo:
+1 num1 = int(input("Ingrese un número: "))
+2 num2 = int(input("Ingrese otro número: "))
+3
+4 try:
+5     resultado = num1 / num2
+6     print(f"{num1} / {num2} =", resultado)
+7 except ZeroDivisionError as e: # Variable asignada
+8     print(e)
+9
+
+- Resultado en except:
+
+Ingrese un número: 3
+Ingrese otro número: 0
+division by zero
+
+- Sintaxis con la cláusula else:
+ try:
+     # Intenta ejecutar este código
+ except <tipo_de_excepción> as <var>:
+     # Si ocurre una excepción de este tipo,
+     # detente inmediatemente y ejecuta
+     # éste código
+ else:
+     # Si no ocurrió una excepción en 'try'
+     # ejecuta este código
+
+- Ejemplo:
+1  num1 = int(input("Ingrese un número: "))
+2  num2 = int(input("Ingrese otro número: "))
+3 
+4  try:
+5      resultado = num1 / num2
+6      print(f"{num1} / {num2} =", resultado)
+7  except ZeroDivisionError as e:
+8      print(e)
+9  else:
+10     print("Else")
+11 
+
+- Resultado en Else:
+
+Ingrese un número: 4
+Ingrese otro número: 3
+4 / 3 = 1.3333333333333333
+Else
+
+- Sintaxis con la cláusula finally:
+ try:
+     # Intenta ejecutar este código
+ except <tipo_de_excepción> as <var>:
+     # Si ocurre una excepción de este tipo,
+     # detente inmediatemente y ejecuta
+     # éste código
+ finally:
+     # Luego, ejecuta este código
+
+- Ejemplo:
+1  num1 = int(input("Ingrese un número: "))
+2  num2 = int(input("Ingrese otro número: "))
+3 
+4  try:
+5      resultado = num1 / num2
+6      print(f"{num1} / {num2} =", resultado)
+7  except ZeroDivisionError as e:
+8      print(e)
+9  finally:
+10     print("Finally")
+11 
+
+- Resultado en try:
+
+Ingrese un número: 4
+Ingrese otro número: 5
+4 / 5 = 0.8
+Finally
+
+- Resultado en except:
+
+Ingrese un número: 3
+Ingrese otro número: 0
+division by zero
+Finally
+
+- Sintaxis con la cláusula finally y else:
+ try:
+     # Intenta ejecutar este código
+ except <tipo_de_excepción> as <var>:
+     # Si ocurre una excepción de este tipo,
+     # detente inmediatemente y ejecuta
+     # éste código
+ else:
+     # Si no ocurrió una excepción en 'try'
+     # ejecuta este código
+ finally:
+     # Luego, ejecuta este código
+
+POO(Programación Orientada a Objetos)
+.....................................
+
+¿Qué es POO?
+------------
+ La programación orientada a objetos (POO) en Python es un paradigma que organiza el código en "objetos", los cuales son instancias de "clases", que define un tipo de objeto, incluyendo sus atributos (datos) y métodos (funciones).
+
+Conceptos clave:
+• Clase: Esquema o molde para crear objetos, definiendo atributos y métodos.
+• Objeto: Instancia de una clase, con sus propios valores para los atributos.
+• Atributo: Variable que pertenece a un objeto o clase.
+• Método: Función que pertenece a un objeto o clase y que define comportamientos.
+
+- Ejemplo:
+1  class Perro:
+2    def __init__(self, nombre, edad):
+3        self.nombre = nombre
+4        self.edad = edad
+5   
+6    def ladrar(self):
+7        print("Guau!")
+8 
+9  mi_perro = Perro("Fido", 3)
+10 mi_perro.ladrar()  # Output: Guau!
+
+ En este ejemplo, Perro es una clase, mi_perro es un objeto, nombre y edad son atributos, y ladrar es un método.
+
+- Desarrollo de una Cuenta Bancaria:
+# cuenta-bancario.py
+class CuentaBancaria:
+    
+    def __init__(self, num_cuenta, nombre_titular, balance):
+        self.num_cuenta = num_cuenta
+        self.nombre_titular = nombre_titular
+        self.balance = balance
+
+Funcionalidad:            ______
+• Retirar              __|      |__
+• Depositar          _| Relevantes |_
+• Generar Balance   |    para el     |
+• Actualizar Datos  |_   Sistema    _|
+• ...                 |__        __|
+                         |______|  
+Recordar:
+ Self -> Instancia Actual
+
+Esquema del proyecto(Cuenta Bancaria):
+               |------->Cuenta Bancaria
+	       |       $0103-231-234-232
+	       |
+Cuenta Bancaria|------->Cuenta Bancaria
+               |       $0103-244-532-552
+               |        
+               |------->Cuenta Bancaria
+                       $0103-654-234-242
+Instancias
+----------
+
+ Cuenta Bancaria	Cuenta Bancaria
+$0103-231-234-232      $0103-244-532-552
+
+ Cuenta Bancaria	Cuenta Bancaria
+$0103-231-234-232      $0103-654-234-242

@@ -1,0 +1,179 @@
+Listas
+......
+
+¿Qué es una Lista?
+------------------
+ Una lista una estructura de datos utilizada para almacenar múltiples valores en secuencia.
+
+- Ejemplo:
+[1, 2, 3, 4]
+
+- Secuencia ordenada:
+["a", "b", "c"]
+ [0]  [1]  [2] -> 1+
+    Indices
+
+- Características:
+• Secuencia ordenada de valores.
+• Puede contener valores de cualquier tipo.
+• Puede contener valores de distintos tió
+• Cada posición en la lista está asociada a un entero llamado "índice".
+• Es mutable. Puede ser modificada.
+
+Acceder a un Elemento
+---------------------
+ Para acceder a un elemento de la lista, usamos su índice correspondiente.
+
+- Sintaxis:
+<lista>[<índice>]
+
+- Ejemplo:
+["a", "b", "c", "d"]
+ [0]  [1]  [2]  [3]
+
+>>> letras = ["a", "b", "c", "d"]
+>>> letras[0]
+'a'
+>>> letras[1]
+'b'
+>>> letras[2]
+'c'
+>>> letras[3]
+'d'
+
+Agregar un Elemento
+-------------------
+Existen dos opciones:
+ 1. Al final de la lista.
+ 2. En un índice específico.
+
+1.
+
+- Sintaxis:
+ <lista>.append(<elem>)
+
+• append(): añade un elemento al final de la lista.
+
+- Ejemplo:
+>>> nums = [1, 2, 3, 4]
+>>> nums.append(5)
+>>> nums
+[1, 2, 3, 4, 5]
+
+2. 
+
+- Sintaxis:
+ <lista>.insert(<índice>, <elem>)
+
+• insert(): inserta un elemento único en una lista existente en una posición específica.
+
+- Ejemplo:
+>>> nums = [1, 2, 3, 4, 5]
+>>> nums.insert(0, 6)
+>>> nums
+[6, 1, 2, 3, 4, 5]
+
+Remover un Elemento
+-------------------
+
+- Sintaxis:
+ <lista>.remove(<elem>)
+
+• remove(): elimina un elemento de una lista.
+
+- Ejemplo:
+>>> a = [1, 2, 3, 4, 5, 4]
+>>> a.remove(4)
+>>> a
+[1, 2, 3, 5, 4]
+
+>>> a = [1, 2, 3, 4, 5, 4]
+>>> a.remove(9)
+Traceback (most recent call last):
+ File "<pyshell#18>", line 1, in <module>
+   a.remove(9)
+ValueError: list.remove(x) : x not in list
+	|
+Error de Valor: list.remove(x): x no está in la lista
+
+Encontrar un Elemento
+---------------------
+
+- Sintaxis:
+ <elem> in <lista>
+
+- Ejemplo:
+>>> vocales = ['a', 'e', 'i', 'o', 'u']
+>>> 'a' in vocales
+True
+>>> 'z' in vocales
+False
+
+.index()
+--------
+
+- Sintaxis:
+ <lista>.index(<elem>)
+
+• index(): retorna el índice de la primera ocurrencia del elemento en la lista. Si no se encuentra el elemento, ocurre un error.
+
+- Ejemplo:
+>>> vocales = ['a', 'e', 'i', 'o', 'u']
+>>> vocales.index('i')
+2
+
+>>> vocales = ['a', 'e', 'i', 'o', 'u']
+>>> vocales.index('z')
+Traceback (most recent call last):
+  File "<pyshell#3>", line 1, in <module>
+    vocales.index('z')
+ValueError: 'z' is not in list
+
+Cambiar un Elemento
+-------------------
+
+Mutable
+-------
+ Pueden ser cambiadas. Sus elementos pueden ser modificados.
+
+- Sintaxis:
+ <lista>[<índice>] = <nuevo_valor>
+
+- Ejemplo:
+>>> nums = [1, 2, 3, 4, 5]
+>>> nums[0] = -8
+>>> nums
+[-8, 1, 2, 3, 4, 5]
+
+Métodos de las Listas
+---------------------
+ Los métodos de las listas son operaciones comunes de listas que ya están implementadas en Python.
+
+- Sintaxis:
+ <lista>.<método>(<parámetros>)
+
+Métodos Importantes:
+• .count(): Devuelve el número de veces que un elemento aparece en una lista.
+• .extend(): Agrega todos los elementos de una lista al final de otra lista.
+• .pop(): Elimina y devuelve el elemento en la posición especificada (por defecto, el último elemento).
+• .reverse(): Invierte el orden de los elementos en la lista.
+• .sort(): Ordena los elementos de la lista en orden ascendente (modificable con parámetros).
+
+- Ejemplos:
+>>> lista = [1, 2, 2, 3, 4, 2]
+>>> lista.count(2)  # Devuelve 3
+
+>>> lista1 = [1, 2, 3]
+>>> lista2 = [4, 5]
+>>> lista1.extend(lista2)  # lista1 ahora es [1, 2, 3, 4, 5]
+
+>>> lista = [1, 2, 3, 4]
+>>> lista.pop()  # Devuelve 4 y lista ahora es [1, 2, 3]
+>>> lista.pop(1)  # Devuelve 2 y lista ahora es [1, 3]
+
+>>> lista = [1, 2, 3, 4]
+>>> lista.reverse()  # lista ahora es [4, 3, 2, 1]
+
+>>> lista = [4, 2, 3, 1]
+>>> lista.sort()  # lista ahora es [1, 2, 3, 4]
+>>> lista.sort(reverse=True)  # lista ahora es [4, 3, 2, 1]

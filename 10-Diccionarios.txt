@@ -1,0 +1,98 @@
+Diccionarios
+............
+
+¿Qué es un Diccionario?
+-----------------------
+ Un diccionario es una colección de pares clave-valor.
+
+- Ejemplo:
+Par Clave-Valor
+  |
+ -------
+{"A": 45, "B": 30}
+  |   |	   ------
+Clave Valor  |
+            Par Clave-Valor
+
+Clave -> Valor
+"A"      45
+
+Características:
+• Colección de Pares Clave-Valor
+• Las claves deben ser únicas e inmutables.
+• Los valores asociados pueden ser de cualquier tipo.
+• La clave se usa para acceder a su valor asociado.
+• Los pares clave-valor pueden ser modificados, añadidos, y eliminados.
+
+Acceder a un Valor
+------------------
+
+- Sintaxis:
+ <diccionario>[<clave>] -> Valor
+
+- Ejemplo:
+>>> edades = {"Gino": 15, "Nora": 45}
+>>> edades["Gino"]
+15
+>>> edades["Nora"]
+45
+
+- Alternativa(get()):
+>>> edades = {"Gino": 15, "Nora": 45}
+>>> edades.get("Gino")
+15
+
+Añadir y Modificar
+------------------
+
+Añadir
+------
+- Sintaxis:
+ <diccionario>[<nueva_clave>] = <nuevo_valor>
+
+- Ejemplo:
+
+>>> edades = {"Gino": 15, "Nora": 45}
+>>> edades["Talina"] = 67
+>>> edades
+{'Gino': 15, 'Nora': 45, 'Talina': 67}
+
+Modificar
+---------
+ Si la clave ya existe, se modifica su valor.
+
+- Sintaxis:
+ <diccionario>[<clave>] = <nuevo_valor>
+
+- Ejemplo:
+>>> edades = {"Gino": 15, "Nora": 45}
+>>> edades["Gino"] = 17
+>>> edades
+{'Gino': 17, 'Nora': 45}
+
+Remover
+-------
+
+- Sintaxis:
+ del <diccionario>[<clave>]
+
+- Ejemplo:
+>>> edades = {"Gino": 15, "Nora": 45}
+>>> del edades["Gino"]
+>>> edades
+{'Nora': 45}
+
+Revisar Existencia
+------------------
+
+- Sintaxis:
+ <elem> in <diccionario>
+
+- Ejemplo:
+>>> edades = {"Gino": 15, "Nora": 45}
+>>> "Gino" in edades
+True
+>>> "Emily" in edades
+False
+>>> "Nora" in edades
+True

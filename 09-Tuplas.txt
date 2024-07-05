@@ -1,0 +1,92 @@
+Tuplas
+......
+
+¿Qué es una Tupla?
+------------------
+ Una tupla es una estructura de datos inmutable que contiene una secuencia ordenada de elementos.
+
+- Ejemplo:
+ (1, 2, 3, 4)
+
+- Secuencia ordenada:
+ ("a", "b", "c")
+  [0]  [1]  [2]
+     Indices
+
+- Características:
+ • Secuencia ordenada de valores.
+ • Puede contener valores de cualquier tipo de datos.
+ • Puede contener valores de distintos tipos de datos.
+ • Cada posición de la tupla se identifica con un entero denominado "índice".
+ • Es inmutable. No puede ser modificada.
+
+🗒Nota: Inmutable = No Puede Cambiar
+
+>>> a = (1, 2, 3, 4)
+>>> a[0] = 5
+Traceback (most recent call last):
+  File "<pyshell#15>", line 1, in <module>
+    a[0] = 5
+TypeError: 'tuple' object does not support item assigment
+
+Acceder a un Elemento
+---------------------
+ Si bien no se pueden cambiar, sí acceder y ver sus valores con su indíce.
+
+- Ejemplo:
+>>> letras = ("A", "B", "C")
+>>> letras[0]
+'A'
+>>> letras[1]
+'B'
+>>> letras[2]
+'C'
+
+Encontrar un Elemento
+---------------------
+ También se puede encontrar un elemento en la tupla, haciendo lo mismo como en las listas.
+
+- Sintaxis:
+ <elem> in <tupla>
+
+- Ejemplo:
+>>> letras = ("a", "b", "c", "d")
+>>> "a" in letras
+True
+>>> "b" in letras
+True
+>>> "z" in letras
+False
+>>> "x" in letras
+False
+
+.index()
+--------
+ También podemos hacer lo mismo, usando el método index().
+
+- Sintaxis:
+ <tupla>.index(<elem>)
+
+- Ejemplo:
+>>> letras = ("a", "b", "c", "d")
+>>> letras.index("a")
+0
+>>> letras.index("b")
+1
+>>> letras.index("z")
+Traceback (most recent call last):
+  File "<pyshell#31>", line 1, in <module>
+    letras.index("z")
+ValueError: tuple.index(x): x is not in tuple
+
+.count()
+--------
+
+- Sintaxis:
+ <tupla>.count(<elem>)
+
+- Ejemplo:
+>>> nums = (3, 5, 2, 8, 4, 6, 3, 2)
+>>> nums.count(3)
+2
+

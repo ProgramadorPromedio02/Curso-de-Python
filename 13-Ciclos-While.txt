@@ -1,0 +1,54 @@
+Ciclo While
+...........
+¿Qué es el Ciclo While?
+-----------------------
+ El ciclo while es un tipo de ciclo que continúa mientras una condición es verdadera y se detiene cuando es falsa.
+
+🗒Nota: Si el ciclo no deja de ser nunca verdadera, puede ocurrir un ciclo Infinito(Infinite Loop), del cual hay que tener mucho cuidado para sobre cargar a la maquina.
+
+- Sintaxis:
+ while <condición>:
+     # Código
+|
+Indentación(nivel de espaciado)
+
+Iteraciones
+-----------
+ En número de iteraciones un ciclo while no tiene un número fijo o predeterminado de iteraciones cuando empiece a ejecutarse. Se ejecuta hasta que la condición es falsa.
+
+Lógica Básica:
+
+	 ______
+	|Inicio|
+	|______|
+	   |
+	   V
+	_________
+ Falso |Evaluar  |
+-------|Condición|<---------
+|      |_________|         |
+|          | Verdadero     |
+|	   V               |
+|     _____________        |
+|    |Instrucciones|_______|
+|    |_____________|
+|     ________________
+|--->|Ciclo se Detiene|
+     |________________|
+           |
+           V
+         _____
+	| Fin |
+	|_____|
+
+Variable de Control
+-------------------
+ Los ciclos while no actualizan la(s) variable(s) de control automáticamente. Deben ser actualizadas en el cuerpo del ciclo.
+
+Ejemplo:
+1 x = 20
+2
+3 while x < 35:# 35 < 35 False
+4     print(x) # 32
+5     x += 3   # 35
+6

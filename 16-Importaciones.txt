@@ -1,0 +1,55 @@
+Importaciones
+.............
+ Las importaciones en Python se dividen en módulos.
+
+¿Qué es un Módulo?
+------------------
+ Un módulo en Python es un archivo que contiene definiciones (como funciones, clases y variables) y sentencias ejecutables. Los módulos se utilizan para organizar y reutilizar código relacionado, facilitando la gestión y la estructura del programa.
+
+¿Qué es el Proceso de Importanción?
+-----------------------------------
+ Un proceso de importación es una sentencia que da acceso a las funciones y constantes definidas en el módulo importado.
+
+- Sintaxis:
+ import <módulo>
+
+- Llamada a una función:
+ <módulo>.<función>(<args>)
+
+- Ejemplo:
+>>> import math
+>>> math.pow(9, 2)
+81.0
+
+- Llamada a una constante:
+ <módulo>.<constante>
+
+- Ejemplo:
+>>> import math
+>>> math.pi
+3.141592653589793
+
+- Sintaxis Alternativa:
+ import <módulo> as <nombre_alternativo>
+ 
+- Llamada a una función y una constante:
+ <nombre_alternativo>.<función>(<args>)
+ <nombre_alternativo>.<constante>
+
+- Ejemplo:
+>>> import math as matematicas
+>>> matematicas.pow(9,2)
+81.0
+>>> matematicas.pi
+3.141592653589793
+
+- Sintaxis para Importar Elementos:
+ from <módule> import <elemento>
+
+- Ejemplo:
+>>> from math import pow
+>>> pow(9,2)
+81.0
+
+- Sintaxis muy usada pero que no es recomentadad☣:
+ from <módulo> import *

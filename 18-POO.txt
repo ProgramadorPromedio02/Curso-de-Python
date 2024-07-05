@@ -1,0 +1,63 @@
+POO(Programación Orientada a Objetos)
+.....................................
+
+¿Qué es POO?
+------------
+ La programación orientada a objetos (POO) en Python es un paradigma que organiza el código en "objetos", los cuales son instancias de "clases", que define un tipo de objeto, incluyendo sus atributos (datos) y métodos (funciones).
+
+Conceptos clave:
+• Clase: Esquema o molde para crear objetos, definiendo atributos y métodos.
+• Objeto: Instancia de una clase, con sus propios valores para los atributos.
+• Atributo: Variable que pertenece a un objeto o clase.
+• Método: Función que pertenece a un objeto o clase y que define comportamientos.
+
+- Ejemplo:
+1  class Perro:
+2    def __init__(self, nombre, edad):
+3        self.nombre = nombre
+4        self.edad = edad
+5   
+6    def ladrar(self):
+7        print("Guau!")
+8 
+9  mi_perro = Perro("Fido", 3)
+10 mi_perro.ladrar()  # Output: Guau!
+
+ En este ejemplo, Perro es una clase, mi_perro es un objeto, nombre y edad son atributos, y ladrar es un método.
+
+- Desarrollo de una Cuenta Bancaria:
+# cuenta-bancario.py
+class CuentaBancaria:
+    
+    def __init__(self, num_cuenta, nombre_titular, balance):
+        self.num_cuenta = num_cuenta
+        self.nombre_titular = nombre_titular
+        self.balance = balance
+
+Funcionalidad:            ______
+• Retirar              __|      |__
+• Depositar          _| Relevantes |_
+• Generar Balance   |    para el     |
+• Actualizar Datos  |_   Sistema    _|
+• ...                 |__        __|
+                         |______|  
+Recordar:
+ Self -> Instancia Actual
+
+Esquema del proyecto(Cuenta Bancaria):
+               |------->Cuenta Bancaria
+	       |       $0103-231-234-232
+	       |
+Cuenta Bancaria|------->Cuenta Bancaria
+               |       $0103-244-532-552
+               |        
+               |------->Cuenta Bancaria
+                       $0103-654-234-242
+Instancias
+----------
+
+ Cuenta Bancaria	Cuenta Bancaria
+$0103-231-234-232      $0103-244-532-552
+
+ Cuenta Bancaria	Cuenta Bancaria
+$0103-231-234-232      $0103-654-234-242

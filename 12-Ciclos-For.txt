@@ -1,0 +1,185 @@
+Ciclos For
+..........
+
+¿Cuál es el propósito de un Ciclo?
+----------------------------------
+ El prosósito de un ciclo llega a ser una estructura de control en programación que permite ejecutar una o varias líneas de código múltiples veces.
+
+Tu texto está casi perfecto. Aquí tienes una pequeña corrección para mejorar la claridad y la gramática:
+
+¿Qué es el Ciclo For?
+---------------------
+ Un ciclo for es un ciclo que se usa cuando sabemos de antemano *cuántas veces* debemos repetir ciertas instrucciones.
+
+- Lógica Básica:
+	 ______
+	|Inicio|
+	|______|
+	   |
+	   V
+	_________
+ Falso |Evaluar  |
+-------|Condición|<---------
+|      |_________|         |
+|          | Verdadero     |
+|	   V               |
+|     _____________        |
+|    |Instrucciones|_______|
+|    |_____________|
+|     ________________
+|--->|Ciclo se Detiene|
+     |________________|
+           |
+           V
+         _____
+	| Fin |
+	|_____|
+
+¿Qué es una Iteración?
+----------------------
+ Una iteración es la repetición de un conjunto de instrucciones en un programa dentro un ciclo.
+
+- Sintaxis del ciclo for:
+ for <var> in range(<inicio>, <fin>):
+	# Código
+
+Variable de Control:
+• Variable que puede ser utilizada en el código que se va a repetir.
+• Se actualiza automáticamente antes de cada iteración.
+• Debe tener un nombre descriptivo.
+
+Range
+-----
+
+- Ejemplo:
+ for i in range(4):
+	print(i)
+
+>>> for i in range(4):
+	print(i)
+0
+1
+2
+3
+
+• range(): Retorna una secuencia de números enteros.
+
+- Analizando la lógica de range():
+range(4)-> 0, 1, 2, 3
+      |
+     fin
+0, 1, 2, 3
+|	 |
+Default fin -1
+
+
+Variable
+de Control Ilustración de range(4)
+    |        |
+for i in 0, 1, 2, 3:
+	print(i) <- El valor se actualiza en cada iteración
+
+• 1era Iteración: i = 0
+• 2da Iteración: i = 1
+• 3era Iteración: i = 2
+• 4ta Iteración: i = 3
+
+- Sintaxis de range() con tres paramentros desde Python Docs:
+ range(start, stop[, step])
+
+• start: El valor del parámetro start(0 si no se utliza el parámetro).
+• stop: El valor del parámetro stop.
+• step: El valor del parámetro step(1 si no se utiliza el parámetro).
+
+Ciclos sobre Iterables
+----------------------
+
+¿Qué es un Iterable?
+--------------------
+ Un iterable es un elemento que retorna sus elementos uno a la vez.
+
+Para iterar sobre:
+• Cadenas de Caracteres.
+• Listas.
+• Tuplas.
+• Diccionarios.
+• Otros...
+
+- Esquema:	 __________
+ ________      _|	   |_
+|Elemento| -> | Variable de  |		
+|________|    |_  Control   _|
+	        |__________|
+
+- Sintaxis:
+ for <var> in <iterable>:
+	# Código
+
+- Ejemplo Visual:
+ for char in "Loops":
+  ______________
+ |Iteration|Char|
+ |_________|____|
+ |    1    |'L' |
+ |_________|____|
+ |    2    |'o' |
+ |_________|____|
+ |    3    |'o' |
+ |_________|____|
+ |    4    |'p' |
+ |_________|____|
+ |    5    |'s' |
+ |_________|____|
+
+- Ejemplo en Código:
+>>> for char in "Loops":
+	print(char)
+L
+o
+o
+p
+s
+
+- Ejemplo en Listas:
+>>> for num in [1, 2, 3]:
+	print(num)
+1
+2
+3
+
+- Ejemplo en Tuplas:
+>>> for num in (1, 2, 3):
+	print(num)
+1
+2
+3
+
+- Ejemplo en Diccionarios:
+>>> letras = {"a": 1, "b": 2}
+>>> for clave in letras:
+	print(clave)
+
+Iterar sobre:
+• Claves
+• Valores
+• Pares Clave-Valor
+
+- Ejemplo en PyShell:
+>>> letras = {"a": 1, "b": 2}
+>>> for clave in letras: 
+...	print(clave)
+...
+a
+b
+>>> for valor in letras.values():
+...	print(valor)
+...
+... 
+1
+2
+>>> for clave, valor in letras.items():
+...	print(clave, valor)
+...
+... 
+a 1
+b 2

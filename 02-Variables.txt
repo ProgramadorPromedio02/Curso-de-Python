@@ -1,0 +1,52 @@
+VARIABLES
+.........
+
+¿Qué es una VARIABLE?
+---------------------
+
+ Una variable es un nombre que se le asigna a un valor en el programa(espacio en memoria). 
+- Ejemplo:
+	Asignación
+	    ^
+	    |
+	num = 5 -> Valor
+        |
+	      V
+	Nombre de la variable
+
+- Sintaxis:
+      Asignación
+	  ^
+	  |
+	<var> = <val> -> Valor
+         	 |
+	         V
+  	Nombre de la variable
+
+Reglas para Nombrar Variables
+
+• Los nombres de variables deben empezar con una letra o con un guión bajo.
+
+- Ejemplo: mi_variable / _mi_variable
+
+• Los nombres de variables no pueden comenzar con un número, de lo contrario, ocurrira un error de sintaxis.
+
+- Ejemplo: 9mi_variable = 5
+SyntaxError: invalid syntax
+^		          ^  
+|		          |
+Error de     Sintaxis inválida
+Sintaxis
+
+• Solo pueden contener caracteres alfanuméricos(A-Z, a-z, 0-9, _).
+
+- Ejemplo: num_vistas = 12442
+
+• No pueden contener caracteres que no sean alfanuméricos.
+
+- Ejemplo: @variable = 34
+SyntaxError: invalid syntax
+
+• Se distingue entre mayúsculas y minúsculas(CaseSensitive).
+
+- Ejemplo: edad/Edad/EDAD

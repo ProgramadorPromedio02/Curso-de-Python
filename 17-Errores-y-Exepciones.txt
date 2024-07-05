@@ -1,0 +1,283 @@
+Errores y Excepciones
+.....................
+
+SyntaxError
+-----------
+ SyntaxError es un error en la sintaxis del programa. Ocurre cuando no se siguen las reglas formales para escribir código en Python.
+
+- Ejemplos:
+>>> x =% 3
+SyntaxError: invalid syntax
+
+- Ejemplo en IDLE:
+1  x = 5
+2
+3  if x > 15❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌❌
+4      print("Mayor que 15")
+5  else:
+6      print("Menor que 15")
+7
+8
+9
+10
+11
+
+-- Mensaje de Error:
+   ________________
+  |SyntaxError     |
+  |________________|
+  |❌invalid syntax|
+  |                |
+  |           ____ |
+  |          | OK ||
+  |          |____||
+  |________________|
+
+- String:
+>>> "Hello'
+SystaxError: EOL while scanning string literal.
+
+- Ejemplo en IDLE:
+1  def contar_numeros_pares(lista):
+2          total = 0
+3
+4          for num in lista:  
+5 ❌❌❌❌❌if num % 2 == 0:
+6              total += 1
+7
+8          return total
+9
+10
+11
+
+-- Mensaje de Error:
+   _____________________________
+  |SyntaxError                  |
+  |_____________________________|
+  |❌expected an indentead block|
+  |                             |
+  |                     ____    |
+  |                    | OK |   |
+  |                    |____|   |
+  |_____________________________|
+
+Excepción
+---------
+
+¿Qué es una Excepción?
+----------------------
+ Una excepción es un error detectado durante la ejecución de un programa.
+
+IndexError
+----------
+>>> "Hola, Mundo"[45]
+Traceback (most recent call last):
+  File "<pyshell#5>", line 1, in <module>
+    "Hola, Mundo"[45]
+IndexError: string index out of range
+
+KeyError
+--------
+>>> puntos = {"Gino": 235, "Nora 435, "Lulu": 342}
+>>> puntos["Jack"]
+Traceback (most recent call last):
+  File "<pyshell#10>", line 1, in <module>
+    puntos["Jack"]
+KeyError: 'Jack'
+
+NameError
+---------
+>>> lista_colores
+Traceback (most recent call last):
+  File "<pyshell#3>", line 1, in <module>
+    lista_colores
+NameError: name 'lista_colores' is not defined
+
+ZeroDivisionError
+-----------------
+>>> 5 / 0
+Traceback (most recent call last):
+  File "<pyshell#0>", line 1, in <module>
+    5 / 0
+ZeroDivisionError: division by zero
+
+RecursionError
+--------------
+>>> def factorial(n):
+        if n == 0 or n == 1:
+                return 1
+        else:
+                return n * factorial(n)
+
+>>> factorial(5)
+Traceback (most recent call last):
+  File "<pyshell#8>", line 1, in <module>
+    factorial(5)
+  File "<pyshell#7>", line 5, in factorial
+    return n * factorial(n)
+  File "<pyshell#7>", line 5, in factorial
+    return n * factorial(n)
+  File "<pyshell#7>", line 5, in factorial
+    return n * factorial(n)
+   [Previus line repeated 1021 more times]
+   File "<pyshell#7>", line 2, in factorial
+     if n == 0 or n == 1:
+RecursionError: maximum recursion depth exceeded in comparison
+
+Cláusulas try except
+--------------------
+
+- Sintaxis:
+ try:
+     # Intenta ejecutar este código
+ except:
+     # Si ocurre una excepción, detente
+     # inmediatamente y ejecuta éste código
+
+- Ejemplo:
+1 num1 = int(input("Ingrese un número: "))
+2 num2 = int(input("Ingrese otro número: "))
+3
+4 try:
+5     resultado = num1 / num2
+6     print(f"{num1} / {num2} =", resultado)
+7 except:
+8     print("Alerta, Excepción.")
+9
+
+- Resultado en try:
+
+Ingrese un número: 4
+Ingrese otro número: 5
+4 / 5 = 0.8
+
+- Resultado en except:
+
+Ingrese un número: 3
+Ingrese otro número: 0
+Alerta, Excepción.
+
+- Sintaxis para especificar el tipo de excepción:
+ try:
+     # Intenta ejecutar este código
+ except <tipo_de_excepción>:
+     # Si ocurre una excepción de este tipo,
+     # detente inmediatemente y ejecuta
+     # éste código
+
+- Ejemplo:
+1 num1 = int(input("Ingrese un número: "))
+2 num2 = int(input("Ingrese otro número: "))
+3
+4 try:
+5     resultado = num1 / num2
+6     print(f"{num1} / {num2} =", resultado)
+7 except ZeroDivisionError: # Tipo de Excepción
+8     print("Alerta, Excepción.")
+9
+
+- Sintaxis para asignar una variable:
+ try:
+     # Intenta ejecutar este código
+ except <tipo_de_excepción> as <var>:
+     # Si ocurre una excepción de este tipo,
+     # detente inmediatemente y ejecuta
+     # éste código
+
+- Ejemplo:
+1 num1 = int(input("Ingrese un número: "))
+2 num2 = int(input("Ingrese otro número: "))
+3
+4 try:
+5     resultado = num1 / num2
+6     print(f"{num1} / {num2} =", resultado)
+7 except ZeroDivisionError as e: # Variable asignada
+8     print(e)
+9
+
+- Resultado en except:
+
+Ingrese un número: 3
+Ingrese otro número: 0
+division by zero
+
+- Sintaxis con la cláusula else:
+ try:
+     # Intenta ejecutar este código
+ except <tipo_de_excepción> as <var>:
+     # Si ocurre una excepción de este tipo,
+     # detente inmediatemente y ejecuta
+     # éste código
+ else:
+     # Si no ocurrió una excepción en 'try'
+     # ejecuta este código
+
+- Ejemplo:
+1  num1 = int(input("Ingrese un número: "))
+2  num2 = int(input("Ingrese otro número: "))
+3 
+4  try:
+5      resultado = num1 / num2
+6      print(f"{num1} / {num2} =", resultado)
+7  except ZeroDivisionError as e:
+8      print(e)
+9  else:
+10     print("Else")
+11 
+
+- Resultado en Else:
+
+Ingrese un número: 4
+Ingrese otro número: 3
+4 / 3 = 1.3333333333333333
+Else
+
+- Sintaxis con la cláusula finally:
+ try:
+     # Intenta ejecutar este código
+ except <tipo_de_excepción> as <var>:
+     # Si ocurre una excepción de este tipo,
+     # detente inmediatemente y ejecuta
+     # éste código
+ finally:
+     # Luego, ejecuta este código
+
+- Ejemplo:
+1  num1 = int(input("Ingrese un número: "))
+2  num2 = int(input("Ingrese otro número: "))
+3 
+4  try:
+5      resultado = num1 / num2
+6      print(f"{num1} / {num2} =", resultado)
+7  except ZeroDivisionError as e:
+8      print(e)
+9  finally:
+10     print("Finally")
+11 
+
+- Resultado en try:
+
+Ingrese un número: 4
+Ingrese otro número: 5
+4 / 5 = 0.8
+Finally
+
+- Resultado en except:
+
+Ingrese un número: 3
+Ingrese otro número: 0
+division by zero
+Finally
+
+- Sintaxis con la cláusula finally y else:
+ try:
+     # Intenta ejecutar este código
+ except <tipo_de_excepción> as <var>:
+     # Si ocurre una excepción de este tipo,
+     # detente inmediatemente y ejecuta
+     # éste código
+ else:
+     # Si no ocurrió una excepción en 'try'
+     # ejecuta este código
+ finally:
+     # Luego, ejecuta este código

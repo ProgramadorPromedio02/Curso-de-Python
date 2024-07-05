@@ -1,0 +1,279 @@
+Funciones
+.........
+
+¿Qué es una Función?
+--------------------
+ Una función es un bloque de código reutilizable que realiza una sola tarea específica.
+
+Esquema de como sería una función:
+ ______________
+|  __________  |
+| |  Tarea   | |
+| |__________| |     
+|  __________  |
+| |  Tarea   | |
+| |__________| |      
+|  __________  |
+| |  Tarea   | |
+| |__________| |      
+|  __________  |
+| |  Tarea   | |
+| |__________| |      
+|  __________  |
+| |  Tarea   | |
+| |__________| |      
+|  __________  |
+| |  Tarea   | |
+| |__________| |
+|______________|
+
+DRY(Don't Repeat Yourself)
+--------------------------
+ En programación, existe un principio que debemos evitar repetir código sino es necesario y minimizarlo.
+
+Esquema de una función siendo reutilizada:
+------------------------------------------
+              ___________
+	     | _________ |
+tarea------->|| tarea() ||
+ ________ |  ||_________||
+|Haz Esto||  | _________ |
+|________||->|| tarea() ||
+          |  ||_________||
+          |  | _________ |
+          |->|| tarea() ||
+          |  ||_________||
+          |  | _________ |
+          |->|| tarea() ||
+          |  ||_________||
+          |  | _________ |
+          |->|| tarea() ||
+          |  ||_________||
+          |  | _________ |
+          |->|| tarea() ||
+             ||_________||
+             |___________|
+
+Ventajas:
+• Reusable
+• Conciso
+• Leíble
+• Mantenible
+• Comprobable
+
+- Sintaxis:
+ def <función>():
+     # Código
+
+- Ejemplo:
+ def mostrar_mensaje():
+   print("¡Hola, Mundo!")
+
+Llamar a un Función
+-------------------
+ Cuando llamamos a una función, ejecutamos el código del cuerpo de la función.
+
+- Sintaxis:
+<nombre_de_la_función>()
+
+- Ejemplo:
+>>> def mostrar_mensaje():
+        print("¡Hola, Mundo!")
+
+>>> mostrar_mensaje()
+¡Hola, Mundo!
+>>> mostrar_mensaje()
+¡Hola, Mundo!
+>>> mostrar_mensaje()
+¡Hola, Mundo!
+
+Esquema gráfico llamando entre el programa principal y la función:
+ _______________________________________
+| ________				|
+||Programa|	      ^	|		|
+||________| __________|_V______________ |
+|          | _______	 	       ||
+|          ||Función|                  ||
+|          ||_______|                  ||
+|          |                           ||
+|          |                           ||
+|          |                           ||
+|          |___________________________||
+|_______________________________________|
+
+Dentro de lo que se componen las funciones entre parentesis, se llama "parámetros" y valores que le pasamos se denoniman "argumentos".
+
+ __________
+|Parámetros|
+|__________|
+ __________
+|Argumentos|
+|__________|
+
+¿Qué es un Parámetro?
+---------------------
+ Un parámetro es una variable que se incluye en la definición de la función para representar y guardar un valor que podemos pasar cuando llamamos a la función.
+
+ _________    __________
+|Parámetro|->|Definición|
+|_________|  |  de la   |
+             | Función  |
+             |__________|
+
+- Sintaxis:
+ def <función>(<parámetro>):
+     # Código
+     |
+    El parámetro puede ser usado en el cuerpo de la función como cualquier otro variable.
+
+- Ejemplo:
+ def mostrar_doble(num):
+     print(num * 2)
+
+ Si necesitamos tomar varios parámentos, deben estar sepados por comas.
+ ____________    ___________
+|   Varios   |  | Separados |
+| Parámetros |->| por Comas |
+|____________|  |___________|
+
+- Ejemplo:
+ def sumar(x, y):
+     print(x + y)
+
+ Si bien estos valores estan creados en el código, no están recibiendo ningun argumentos para ser usados.
+
+¿Qué es un Argumento?
+---------------------
+ Un argumento es un valor que asignamos a un parámetro cuando llamamos a una función.
+ __________    ____________
+|Argumentos|->|  Llamada   |
+|__________|  |a la función|
+              |____________|
+
+ Los argumentos son asignados a sus correspondientes parámetros.
+
+Definición de la Función:
+  def sumar(x, y):
+     print(x + y)
+
+Llamada a la Función:
+  sumar(4, 5)
+
+- Ejemplo:
+>>> def sumar(x, y):
+        print(x + y)
+
+>>> sumar(4, 5)
+9
+
+Diferencia entre Parámentros y Argumentos
+-----------------------------------------
+ Los parámetros se incluyen en la definición de la función, mientras que los argumentos se incluyen en la llamada de la función, y por ende, los argumentos sin asignados a los parámetros.
+ __________    __________
+|Parámetros|->|Definición|
+|__________|  |__________|
+
+ __________    _______
+|Argumentos|->|Llamada|
+|__________|  |_______|
+
+Esquema gráfico de la función retornando en el programado:
+ _______________________________________
+| ________				|
+||Programa|	      ^			|
+||________| __________|________________ |
+|          | _______	 	       ||
+|          ||Función|                  ||
+|          ||_______|                  ||
+|          |                           ||
+|          |                           ||
+|          |                           ||
+|          |___________________________||
+|_______________________________________|
+
+ El propósito de esta comunicación es que la función retorne un valor luego de completar la tarea.
+
+- Sintaxis:
+ def <función>(<params>):
+     # Código
+     return <valor>
+
+- Ejemplo:
+>>> def sumar(x, y):
+        return x + y
+
+>>> resultado = sumar(4, 5)
+>>> resultado
+9
+
+🗒Nota: Cuando se ejecuta 'return', la ejecución de la función se detiene inmediatamente.
+
+Si no hay 'return', por defecto será el valor None.
+
+- Ejemplo:
+>>> def sumar(x, y):
+        print(x + y)
+
+
+>>> resultado = sumar(4, 5)
+9
+>>> print(resultado)
+None
+
+En el shell interactivo, el valor retornado por la llamada a una función no se muestra si se asigna a una variable. Para ver el valor, se tiene que usar la función print()
+
+Alcance de una Variable(Scope)
+------------------------------
+ El Scope es el alcance que tendrá la variable en el programa. Dónde se podrá usar. Determina a qué variables se tiene acceso en cada parte del programa.
+
+Tipos de Scope
+--------------
+ Existen dos tipos:
+		  ______
+	    |--->|Global|
+	    |	 |______|
+            |
+ _________  |
+|Variables|-|
+|_________| |
+            |
+            |     _____
+            |--->|Local|
+		 |_____|
+
+Scope Global
+------------
+ • Definición: Variables definidas fuera de funciones, accesibles en todo el programa.
+ • Uso: Para datos que deben ser accesibles en cualquier parte del código.
+
+Scope Local
+-----------
+ • Definición: Variables definidas dentro de funciones, accesibles solo dentro de esas funciones.
+ • Uso: Para datos temporales utilizados únicamente dentro de una función específica.
+
+Esquema:
+ _______________________________________
+| ________	  ____________		|
+||Programa|	 |Scope Global|		|
+||________|      |____________|         |
+|	    ___________________________ |
+|          | _______	 ___________   ||
+|          ||Función|   |Scope Local|  ||
+|          ||_______|   |___________|  ||
+|          |                           ||
+|          |                           ||
+|          |                           ||
+|          |___________________________||
+|_______________________________________|
+
+- Ejemplo:
+
+ x = 10  # Variable global
+ 
+ def mi_funcion():
+     y = 5  # Variable local
+     print(x, y) 
+ 
+ mi_funcion()
+ print(x)
+ # print(y)  # Error: 'y' es local

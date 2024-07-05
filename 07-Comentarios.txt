@@ -1,0 +1,33 @@
+Comentarios
+...........
+
+¿Qué es un Comentario?
+----------------------
+ Un comentario es un texto que se escribe en el programa para facilitar su comprensión. No son parte del código.
+
+Propósito:
+ Describir la lógica de ciertas partes del código a otros programadores que lean el programa. Este es un comentario en Python: # Comentario
+
+- Ejemplo:
+# Número de estudiantes
+# registrados en el salón 56
+num_estudiantes = 33
+
+🗒Nota: No comentar en exceso.
+
+- Ejemplo:
+# Temperatura inicial 56
+temp = 56
+
+# Si la temperatura es mayor
+# a 60, mostrar mensaje "Caliente"
+if temp > 60:
+	print("Caliente")
+# Si la temperatura es mayor
+# a 35, mostrar mensaje "Normal"
+elif temp > 35:
+	print("Normal")
+# Si la temperatura es menor o igual
+# a 35, mostrar mensaje "Frío"
+else:
+	print("Frío")

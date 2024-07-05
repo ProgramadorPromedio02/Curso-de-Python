@@ -1,0 +1,63 @@
+INTRODUCCIÓN
+............
+
+¿Qué es Python?
+---------------
+ Python es un lenguaje de programación de alto nivel, interpretado y de propósito general. Fue creado por Guido van Rossum y lanzado por primera 
+vez en 1991. Es conocido por su sintaxis clara y legible, lo que facilita la escritura y el mantenimiento del código.
+
+Características de Python
+-------------------------
+• Sencillo y Legible: Sintaxis clara que hace que el código sea fácil de leer y escribir.
+• Interpretado: No requiere compilación, se ejecuta directamente del código fuente.
+• Multiparadigma: Soporta programación orientada a objetos, funcional y procedural.
+• Gran Biblioteca Estándar: Ofrece módulos y paquetes para realizar diversas tareas.
+• Portabilidad: Funciona en múltiples sistemas operativos, como Windows, macOS y Linux.
+• Comunidad Activa: Gran cantidad de recursos, bibliotecas y soporte comunitario.
+
+Cómo Instalar Python en tu PC
+-----------------------------
+
+1. Descargar Python:
+ • Ve a la página oficial de Python: python.org
+ • Haz clic en "Downloads" y selecciona la versión adecuada para tu sistema operativo (Windows, macOS, o Linux).
+
+2. Instalar en Windows:
+ • Descarga el instalador y ejecútalo.
+ • Asegúrate de marcar la casilla "Add Python to PATH".
+ • Sigue las instrucciones del instalador.
+
+3. Instalar en macOS:
+ • Puedes usar el instalador descargado desde el sitio oficial.
+ • Alternativamente, puedes usar Homebrew:
+ //sh
+ brew install python
+
+4. Instalar en Linux:
+ • Usa el gestor de paquetes de tu distribución. Por ejemplo, en Ubuntu:
+ //sh
+ sudo apt update
+ sudo apt install python3
+
+5. Verificar la Instalación:
+ • Abre una terminal o el símbolo del sistema.
+ • Escribe python --version o python3 --version y presiona Enter.
+ • Deberías ver la versión de Python instalada.
+
+Una vez instalado, puedes empezar a escribir y ejecutar programas en Python usando un IDLE del shell de Python.
+
+¿Qué es un IDLE?
+----------------
+ Entorno integrado de programación que se instala automáticamente cuando instalas Python.
+
+Con IDLE puedes:
+• Escribir |
+• Editar   | --> Código
+• Ejecutar |
+
+ Para poder ejecutar IDLE:
+ • Ve a la siguiente ubicación:
+ C:\Users\User\AppData\Local\Programs\Python\Python312\Lib\idlelib
+ • Escribe "idle" en el buscador del explorador de archivos.
+ • Abre el archivo llamado idle.py, haz clic derecho y selecciona "Enviar a" -> "Escritorio (crear acceso directo)" para tener un acceso rápido al
+ shell de Python en tus futuros proyectos.

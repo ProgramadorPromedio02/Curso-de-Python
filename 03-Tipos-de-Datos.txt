@@ -1,0 +1,192 @@
+Tipos de Datos
+..............
+
+Númericos
+---------
+
+• Entero:
+ Números que no tienen decimales.
+* Positivos.
+* Negativos.
+* Cero.
+
+- Ejemplos:
+
+5  -3  0
+
+3  -8
+
+15 -1
+
+27 -16
+
+- Type(): para saber el tipo de dato de la variable.
+
+<class 'int'>
+int => Integer = Entero
+
+- Ejemplos:
+
+>>> type(5)
+<class 'int'>
+>>> type(-15)
+<class 'int'>
+>>> type(0)
+<class 'int'>
+
+🗒Nota: En python no hay límites sino el sistema que permita en nuestro dispositivo.
+
+• Números en Coma Flotante:
+ Números que tienen decimales.
+ * Positivos.
+ * Negativos.
+
+- Type():
+
+<class 'float'>
+Float = Flotar
+
+- Ejemplos:
+>>> type(0.5)
+<class 'float'>
+>>> type(13.4)
+<class 'float'>
+>>> type(4.0)
+<class 'float'>
+
+• Booleanos: se representan entre los valores de verdad(True y False).
+
+- Importantantes para:
+ * Expresiones Condicionales.
+ * Ciclos(Bucles).
+
+- Type():
+
+<class 'bool'>
+bool = Booleano
+
+- Ejemplos:
+
+>>> type(True)
+<class 'bool'>
+>>> type(False)
+<class 'bool'>
+
+Cadenas de Caracteres
+---------------------
+
+¿Qué es una Cadena de Caracteres(String)?
+-----------------------------------------
+ Una cadena de caracteres es una secuencia de caracteres encerrados entre comillas y usados para representar texto en el programa.
+
+Ejemplo: "Python"/'Python'
+
+- Type():
+
+>>> type("Python")
+<class 'str'>
+str => String = Cadena(en referencia al texto)
+
+• No puedes mezclar las comillas dobles("") y las comillas simples('') en el código. 
+
+Ejemplos: 
+>>> "Python'
+SyntaxError: EOL while scanning string literal -> Cuando se estaba escaneando la cadena literal de caracteres.
+             ^
+	     	     |
+	      End of Line = Final de la Línea
+
+>>> 'Python"
+SyntaxError: EOL while scanning string literal
+
+• El valor de un entero no igual que una parte de cadena de caracteres. Ejemplo: 5 != "5"
+
+- Type():
+
+>>> type(5)
+<class 'int'>
+>>> type("5")
+<class 'str'>
+
+Tamaño(Length)
+--------------
+ Número de caracteres que posee, empezando desde 0 en adelante.
+
+• len(): calcula la longitud de la cantidad de caracteres que existen en el string.
+
+- Ejemplos:
+
+ len("") -> 0
+ len("A") -> 1
+ len("Hola") -> 4
+ len("Python") -> 6
+
+Indexación(Indexing)
+--------------------
+ Nos permite acceder a caracteres individuales de la cadena.
+
+- Sintaxis:
+
+<cadena>[<índice>]
+
+- Ejemplo:
+
+>>> palabra = "Python"
+>>> palabra[0]
+'P'
+>>> palabra[1]
+'y'
+>>> palabra[2]
+'t'
+>>> palabra[3]
+'h'
+>>> palabra[4]
+'o'
+>>> palabra[5]
+'n'
+>>> palabra[6]
+Traceback (most recent call last):
+  File "<pyshell#32>", line 1, in <module>
+    palabra[6]
+IndexError: string index out of range
+		|	
+		V
+IndexError: Índice de cadena de caracteres fuera de rango
+
+Rebanado(Slicing)
+-----------------
+ Nos permite obtener una rebanada(porción) de una cadena de caracteres.
+
+- Sintaxis:
+		 Índice que marca el fin de la rebanada.
+		 ^
+		 |
+<cadena>[inicio:fin]
+	 |
+	 V
+	Índice que marca el inicio de la rebanada.
+
+- Ejemplo:
+ 
+>>> palabra = "Python"
+>>> palabra[1:4]
+'yth'
+
+- Otras formas:
+ 
+<cadena>[inicio:]
+<cadena>[:fin]
+<cadena>[:]
+
+- Un tercer parametro:
+
+<cadena>[inicio:fin:paso]
+		    |
+		    V
+		   Cómo "saltar" de un caracter al siguiente.
+
+- Ejemplo:
+
+>>> palabra = "Python"
+>>> palabra[1:6:2]
+'yhn'

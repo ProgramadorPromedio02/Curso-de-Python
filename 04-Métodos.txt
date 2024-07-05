@@ -1,0 +1,72 @@
+Métodos
+.......
+
+¿Qué es son los Métodos de Cadena de Caracteres?
+------------------------------------------------
+ Son operaciones comunes que vienen implementadas en Python.
+
+- Sintaxis:
+
+<cadena>.<método>(<valores>)
+
+• Capitalize: Retorna una copia de la cadena con el primer carácter en mayúsculas y el resto minúsculas.
+
+- Sintaxis:
+
+<cadena>.capitalize()
+
+- Ejemplo:
+
+>>> palabra = "python"
+>>> palabra.capitalize()
+'Python'
+
+Métodos Importantes:
+--------------------
+• find: Busca una subcadena dentro de una cadena y devuelve el índice de la primera aparición. Si no se encuentra, devuelve -1.
+• index: Similar a find, busca una subcadena y devuelve el índice de la primera aparición, pero lanza una excepción ValueError si no se encuentra.
+• isalnum: Devuelve True si todos los caracteres de la cadena son alfanuméricos (letras y números) y hay al menos un carácter, de lo contrario devuelve False.
+• isalpha(): Devuelve True si todos los caracteres de la cadena son letras y hay al menos un carácter, de lo contrario devuelve False.
+• isdecimal(): Devuelve True si todos los caracteres de la cadena son caracteres decimales y hay al menos un carácter, de lo contrario devuelve False.
+• isdigit(): Devuelve True si todos los caracteres de la cadena son dígitos y hay al menos un carácter, de lo contrario devuelve False.
+• islower(): Devuelve True si todos los caracteres de la cadena están en minúsculas y hay al menos un carácter, de lo contrario devuelve False.
+• isupper(): Devuelve True si todos los caracteres de la cadena están en mayúsculas y hay al menos un carácter, de lo contrario devuelve False.
+• lower(): Convierte todos los caracteres de la cadena a minúsculas y devuelve una nueva cadena.
+• upper(): Convierte todos los caracteres de la cadena a mayúsculas y devuelve una nueva cadena.
+
+Recibiendo Datos del Usuario
+----------------------------
+• input(): Permite recibir los datos del usuario, y mostrarlo un mensaje descriptivo en consola.
+
+- Sintaxis:
+
+<var> = input(<mensaje>)
+
+- Ejemplo:
+
+num = input("Ingrese un Número: ")
+print(num)
+
+Ejecución:
+Ingrese un Número: 5
+5
+
+Advertencia: La función input() siempre retorna una cadena de caracteres.
+
+- Ejemplo:
+>>> num = input("Ingrese un Número: ")
+
+Ejecución:
+Ingrese un Número: 5
+5
+>>> type(num)
+<class 'str'>
+
+Solución:
+>>> num = int(input("Ingrese un Número: "))
+
+Ejecución:
+Ingrese un Número: 5
+5
+>>> type(num)
+<class 'int'>

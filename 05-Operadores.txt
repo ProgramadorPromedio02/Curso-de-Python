@@ -1,0 +1,316 @@
+Operadores
+..........
+
+¿Qué es un Operador?
+------------------
+Un operador es un símbolo que denota una operación en el programa. Los operadores son esos valores con los cuales se ejecuta la operación.
+
+- Sintaxis:
+Operador + Operandos = Expresión
+
+¿Qué es una Expresión?
+----------------------
+Una expresión es una combinación de valores, variables, y operadores que al ser evaluados resultan en un valor.
+
+Las expresiones se evalúan de izquierda a derecha => 
+Excepto cuando ciertos operadores tienen mayor "importancia" para el orden de las operaciones.
+
+Operadores:
+-----------
+• Aritméticos
+• Lógicos
+• De Asignación
+• Relacionales
+
+Operadores Aritméticos
+----------------------
+ Nos permiten realizar operaciones aritméticas en el programa.
+
+Operadores Aritméticos son permiten hacer:
+• Suma
+• Resta
+• Multiplicación
+• División
+• División Entera
+• Exponente
+• Módulo
+
+Operador Suma(+)
+----------------
+>>> 5 + 6
+11
+>>> 2 + 3
+5
+>>> 6 + 8
+14
+>>> 3.4 + 5.6
+9.0
+
+También se puede usar para concatenar en cadena de caracteres.
+
+>>> "Hola" + " " + "Mundo"
+'Hola Mundo'
+
+Operador Resta(-)
+-----------------
+>>> 10 - 4
+6
+>>> 4 - 8
+-4
+>>> 0 - 6
+-6
+>>> 3.4 - 5.6
+-2.1999999999999997
+>>> 2 - 8.9
+-6.9
+
+Operador Multiplicación(*)
+--------------------------
+>>> 5 * 6
+30
+>>> 4 * 0
+0
+>>> -5 * -8
+40
+>>> -5 * 8
+-40
+>>> 4.5 * 7.9
+35.550000000000004
+
+Operador División(/)
+--------------------
+>>> 15 / 5
+3.0
+>>> 15 / 8
+1.875
+>>> 12.5 / 4
+3.125
+>>> 4 / 4.5
+0.88888888888888888
+>>> 4.2 / 4.1
+1.024390243902439
+
+🗒Nota: Siempre retorna un número de coma flotante.
+
+>>> 5 / 0
+Traceback (most recent call last):
+ File "<pyshell#123>", line 1, in <module>
+   5 / 0
+ZeraDivisionError: division by zero
+|
+V
+Error de división por Cero
+
+Operador División Entero(//)
+----------------------------
+Trunca el resultado de la división:
+>>> 15 // 5
+3
+>>> 3 // 5
+0
+>>> 157 // 56
+2
+>>> -4 // -6
+0
+>>> -15 // -10
+1
+
+El único caso donde no pueda retornar un número de coma flotante, si dividimos dos números de coma flotante:
+>>> 5.6 // 3.4
+1.0
+
+Se usa en aplicaciones de algoritmos de búsqueda binaria.
+
+Operador Exponente(**)
+----------------------
+>>> 5 ** 3
+125
+>>> 3 ** 8
+6561
+>>> 2 ** 3
+8
+>>> 4.5 ** 4.7
+1175.1649090387732
+>>> 16 ** (1/2)
+4.0
+>>> 5 ** 0
+1
+
+Regla matemática: Todo número elevado a 0 da como resultado 1.
+
+Operador Módulo(%)
+------------------
+Retorna el resto de la división. Es comúnmente utilizado para verificar si un número es par o impar.
+
+5|2
+ |-
+1|2
+
+>>> 5 % 2
+1
+>>> 4 % 3
+1
+>>> 16 % 4
+0
+>>> 16 % 6
+4
+>>> 18 % 4
+2
+
+🗒Nota: Para saber el orden en las operaciones, se toma un acrónimo llamado PEMDAS(Paréntesis/Parenthesis Exponentes/Exponents Multiplicación/Multiplication División/Division Suma/Addition Resta/Subtraction)
+
+Operadores Lógicos
+------------------
+ Nos permiten trabajar con valores booleanos(True y False). Estos son: and or not
+
+Operador and
+------------
+ Evalúa si el operador izquierdo y el derecho son verdaderos. 
+
+- Sintaxis: 
+ x and y
+
+TABLA DE VERDAD
+ _______________________
+|  X  |  Y  |  X and Y  |
+|_____|_____|___________|
+|True |True | True      |
+|_____|_____|___________|
+|True |False| False     |
+|_____|_____|___________|
+|False|True | False     |
+|_____|_____|___________|
+|False|False| False     |
+|_____|_____|___________|
+
+>>> (5 < 6) and (6 > 8)
+False
+
+Operador or
+-----------
+ Evalúa si cualquier operador de verdad son verdaderos.
+
+- Sintaxis:
+ x or y
+
+TABLA DE VERDAD
+ _______________________
+|  X  |  Y  |  X and Y  |
+|_____|_____|___________|
+|True |True | True      |
+|_____|_____|___________|
+|True |False| True      |
+|_____|_____|___________|
+|False|True | True      |
+|_____|_____|___________|
+|False|False| False     |
+|_____|_____|___________|
+
+>>> (5 < 6) or (6 > 8)
+True
+
+Oparador not
+------------
+ Nega el valor de la expresión.
+
+- Sintaxis:
+ not x
+
+TABLA DE VERDAD
+ __________________
+|   X    |  not X  |
+|________|_________|
+|True    |False    |
+|________|_________|
+|False   |True     |
+|________|_________|
+
+>>> not True
+False
+>>> not False
+True
+
+Prioridad:
+• not  | Mayor
+• and  |
+• or   |
+       V Menor
+
+Operadores de Asignación
+------------------------
+ Son utilizados para asignar valores a las variables del programa. Estos son:
+• Asignación de la Variable(=)
+• Asignación de Suma(+=)
+• Asignación de Resta(-=)
+• Asignación de Multiplicación(*=)
+• Asignación de División(/=)
+• Asignación de Exponente(**=)
+• Asignación de División Entera(//=)
+• Asignación de Módulo(%=)
+
+>>> edad = 56
+>>> edad += 3
+>>> edad
+59
+>>> edad -= 2
+>>> edad
+57
+>>> edad *= 3
+>>> edad
+171
+>>> edad /= 2
+>>> edad
+85.5
+
+Operadores Relacionales
+-----------------------
+ Son utilizados para comparar valores y retornar un valor booleano. Estos son: 
+• Mayor que(>)
+• Menor que(<)
+• Igual(==)
+• Mayor igual que(>=)
+• Menos igual que(<=)
+• No igual a(!=)
+
+>>> 5 > 6
+False
+>>> 10 > 3
+True
+
+>>> 5 > 5
+False
+>>> 5 >= 5
+True
+
+>>> 5 < 6
+True
+>>> 10 < 3
+False
+
+>>> 3 < 3
+False
+>>> 3 <= 3
+True
+
+>>> 8 == 8
+True
+>>> 8 != 8
+False
+
+>>> "Hola" == "Hola"
+True
+>>> "Hola" == "H"
+False
+
+>>> "ABC" < "A"
+False
+>>> "A" < "B"
+True
+>>> "B" > "A"
+True
+>>> "C" != "D"
+True
+>>> "Noris" == "Gino"
+False
+
+🗒Nota: Se toma en orden alfabetico.

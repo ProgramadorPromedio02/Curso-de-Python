@@ -1,0 +1,126 @@
+Recursión
+.........
+
+¿Qué es una Recursión?
+----------------------
+ La recursión sería definir algo en términos de sí mismo.
+
+Vamos aplicar este concepto, aplicando la sucesión de fibonacci:
+ 0, 1, 1, 2, 3, 5, 8, 13, 21, ...
+
+- Sintaxis:
+ fib(n) = fib(n-1) + fib(n-2)
+
+🗒Nota: La sucesión inicia con 0 y 1.
+
+Función Recursiva
+-----------------
+En programación se le llama "Función Recursiva" cuando una función que se llama a sí misma. Los funciones recursivas tienen dos elementos principales en su estructura:
+• Caso Base: permite que el proceso se detenga.
+• Caso Recursivo: permite descomponer un problema a un versión más pequeña.
+
+- Ejemplo:
+ def fibonacci(n):
+     if n == 0 or n == 1:
+         return n # Caso Base
+     else:
+         return fibonacci(n-1) + fibonacci(n-2) # Caso Recursivo
+
+ # n = posición en la sucesión(iniciando en 0)
+ #   0, 1, 1, 2, 3, 5, 8, 13, 21, ...
+ # n 0  1  2  3  4  5  6  7   8
+
+- Lógica del fibonacci:
+>>> def fibonacci(n):
+        if n == 0 or n == 1:
+                return n
+        else:
+                return fibonacci(n-1) + fibonacci(n-2)
+
+>>> fibonacci(2)
+1
+>>> fibonacci(3)
+2
+
+Archivos
+........
+ Para trabajar con un archivo en Python se usa la sentencia 'with'.
+Sentencia 'with'
+----------------
+ Un sentencia with nos permite abrir un archivo y luego cerrarlo automáticamente.
+
+- Sintaxis:
+ with open("<nombre_archivo>.txt", "r") as archivo:
+     # Trabajar con el archivo
+
+- Ejemplo:
+ with open("frases_famosas.txt") as archivo: # Sino se pone un segundo parámetro, será "r" por defecto.
+     for linea in archivo:
+         print("==== Frase ====")
+         print(linea)
+
+Modos de Apertura de Archivos:
+• r(read - leer)
+• w(write - escribir)
+• a(append - añadir)
+• Agregar un + incluye leer. Por ejemplo, w+ es leer y escribir.
+
+Modificar Archivos
+------------------
+ Existen dos formas:
+1. Reemplazar Contenido
+2. Añadir Contenido
+
+1.
+
+- Sintaxis:
+ with open("<nombre_archivo>.txt", "w") as archivo:
+     # Trabajar con el archivo
+
+# archivo.write(<contenido>)
+
+- Ejemplo:
+1  notas = {
+2      "Nora": 87,
+3      "Gino": 100,
+4      "Loretto": 67,
+5      "Talina": 45
+6  }
+7  
+8  with open("data_estudiantes.txt", "w") as archivo:
+9      for nombre, nota in notas.items():
+10         archivo.write(nombre + " - " + str(nota) + "\n")
+11
+
+- Resultado en el archivo data_estudiantes.txt:
+  Nora - 87
+  Gino - 100
+  Loretto - 67
+  Talina - 45
+
+2. 
+
+- Sintaxis:
+ with open("<nombre_archivo>.txt", "a") as archivo:
+     # Trabajar con el archivo
+
+- Ejemplo:
+1  nuevas_notas = {
+2       "Emily": 54,
+3       "Daniel": 98,
+4       "Julienne": 78
+5  }
+6  
+7  with open("data_estudiantes.txt", "a") as archivo:
+8      for nombre, nota in nuevas_notas.items():
+9          archivo.write(nombre + " - " + str(nota) + "\n")
+10
+
+- Resultado en el archivo data_estudiantes.txt:
+  Nora - 87
+  Gino - 100
+  Loretto - 67
+  Talina - 45
+  Emily - 54
+  Daniel - 98
+  Julienne - 78
