@@ -23,9 +23,9 @@ Métodos
 
 Métodos Importantes:
 --------------------
-• find: Busca una subcadena dentro de una cadena y devuelve el índice de la primera aparición. Si no se encuentra, devuelve -1.
-• index: Similar a find, busca una subcadena y devuelve el índice de la primera aparición, pero lanza una excepción ValueError si no se encuentra.
-• isalnum: Devuelve True si todos los caracteres de la cadena son alfanuméricos (letras y números) y hay al menos un carácter, de lo contrario devuelve False.
+• find(): Busca una subcadena dentro de una cadena y devuelve el índice de la primera aparición. Si no se encuentra, devuelve -1.
+• index(): Similar a find, busca una subcadena y devuelve el índice de la primera aparición, pero lanza una excepción ValueError si no se encuentra.
+• isalnum(): Devuelve True si todos los caracteres de la cadena son alfanuméricos (letras y números) y hay al menos un carácter, de lo contrario devuelve False.
 • isalpha(): Devuelve True si todos los caracteres de la cadena son letras y hay al menos un carácter, de lo contrario devuelve False.
 • isdecimal(): Devuelve True si todos los caracteres de la cadena son caracteres decimales y hay al menos un carácter, de lo contrario devuelve False.
 • isdigit(): Devuelve True si todos los caracteres de la cadena son dígitos y hay al menos un carácter, de lo contrario devuelve False.
@@ -51,7 +51,7 @@ Ejecución:
 Ingrese un Número: 5
 5
 
-Advertencia: La función input() siempre retorna una cadena de caracteres.
+Advertencia: La función input() siempre devuelve una cadena de caracteres.
 
 - Ejemplo:
 >>> num = input("Ingrese un Número: ")

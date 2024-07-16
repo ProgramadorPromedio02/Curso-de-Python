@@ -34,7 +34,7 @@ int => Integer = Entero
 >>> type(0)
 <class 'int'>
 
-🗒Nota: En python no hay límites sino el sistema que permita en nuestro dispositivo.
+🗒Nota: En python no hay límites sino el sistema que permita en nuestra maquina.
 
 • Números en Coma Flotante:
  Números que tienen decimales.

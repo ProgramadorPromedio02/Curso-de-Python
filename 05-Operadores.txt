@@ -10,7 +10,7 @@ Operador + Operandos = Expresión
 
 ¿Qué es una Expresión?
 ----------------------
-Una expresión es una combinación de valores, variables, y operadores que al ser evaluados resultan en un valor.
+ Una expresión es una combinación de valores, variables, y operadores que al ser evaluados resultan en un valor.
 
 Las expresiones se evalúan de izquierda a derecha => 
 Excepto cuando ciertos operadores tienen mayor "importancia" para el orden de las operaciones.
@@ -209,7 +209,7 @@ TABLA DE VERDAD
 >>> (5 < 6) or (6 > 8)
 True
 
-Oparador not
+Operador not
 ------------
  Nega el valor de la expresión.
 
