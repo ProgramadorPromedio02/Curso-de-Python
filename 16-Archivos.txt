@@ -1,0 +1,81 @@
+Archivos
+........
+ Para trabajar con un archivo en Python se usa la sentencia 'with'.
+Sentencia 'with'
+----------------
+ Una sentencia with nos permite abrir un archivo y luego cerrarlo automáticamente.
+
+- Sintaxis:
+ with open("<nombre_archivo>.txt", "r") as archivo:
+     # Trabajar con el archivo
+
+- Ejemplo:
+ with open("frases_famosas.txt") as archivo: # Sino se pone un segundo parámetro, será "r" por defecto.
+     for linea in archivo:
+         print("==== Frase ====")
+         print(linea)
+
+Modos de Apertura de Archivos:
+• r(read - leer)
+• w(write - escribir)
+• a(append - añadir)
+• Agregar un + incluye leer. Por ejemplo, w+ es leer y escribir.
+
+Modificar Archivos
+------------------
+ Existen dos formas:
+1. Reemplazar Contenido
+2. Añadir Contenido
+
+1.
+
+- Sintaxis:
+ with open("<nombre_archivo>.txt", "w") as archivo:
+     # Trabajo con el archivo
+ # archivo.write(<contenido>)
+
+- Ejemplo:
+1  notas = {
+2      "Nora": 87,
+3      "Gino": 100,
+4      "Loretto": 67,
+5      "Talina": 45
+6  }
+7  
+8  with open("data_estudiantes.txt", "w") as archivo:
+9      for nombre, nota in notas.items():
+10         archivo.write(nombre + " - " + str(nota) + "\n")
+11
+
+- Resultado en el archivo data_estudiantes.txt:
+  Nora - 87
+  Gino - 100
+  Loretto - 67
+  Talina - 45
+
+2. 
+
+- Sintaxis:
+ with open("<nombre_archivo>.txt", "a") as archivo:
+     # Trabajar con el archivo
+
+- Ejemplo:
+1  nuevas_notas = {
+2       "Emily": 54,
+3       "Daniel": 98,
+4       "Julienne": 78
+5  }
+6  
+7  with open("data_estudiantes.txt", "a") as archivo:
+8      for nombre, nota in nuevas_notas.items():
+9          archivo.write(nombre + " - " + str(nota) + "\n")
+10
+
+- Resultado en el archivo data_estudiantes.txt:
+  Nora - 87
+  Gino - 100
+  Loretto - 67
+  Talina - 45
+  Emily - 54
+  Daniel - 98
+  Julienne - 78

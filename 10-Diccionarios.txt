@@ -28,7 +28,7 @@ Acceder a un Valor
 ------------------
 
 - Sintaxis:
- <diccionario>[<clave>] -> Valor
+ <diccionario>[<clave>] -> <valor>
 
 - Ejemplo:
 >>> edades = {"Gino": 15, "Nora": 45}

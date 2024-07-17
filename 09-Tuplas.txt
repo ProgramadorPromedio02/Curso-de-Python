@@ -28,10 +28,13 @@ Traceback (most recent call last):
   File "<pyshell#15>", line 1, in <module>
     a[0] = 5
 TypeError: 'tuple' object does not support item assigment
+			|
+			V
+TypeError: El objeto 'tuple' no soporta la asignación de elementos.
 
 Acceder a un Elemento
 ---------------------
- Si bien no se pueden cambiar, sí acceder y ver sus valores con su indíce.
+ Si bien no se pueden cambiar, sí se pueden acceder y ver sus valores con su indíce.
 
 - Ejemplo:
 >>> letras = ("A", "B", "C")

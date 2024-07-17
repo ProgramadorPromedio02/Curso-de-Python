@@ -10,7 +10,7 @@ Propósito:
 
 - Ejemplo:
 # Número de estudiantes
-# registrados en el salón 56
+# registrados en la comisión 1
 num_estudiantes = 33
 
 🗒Nota: No comentar en exceso.

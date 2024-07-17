@@ -3,9 +3,7 @@ Ciclos For
 
 ¿Cuál es el propósito de un Ciclo?
 ----------------------------------
- El prosósito de un ciclo llega a ser una estructura de control en programación que permite ejecutar una o varias líneas de código múltiples veces.
-
-Tu texto está casi perfecto. Aquí tienes una pequeña corrección para mejorar la claridad y la gramática:
+ El propósito de un ciclo llega a ser una estructura de control en programación que permite ejecutar una o varias líneas de código múltiples veces.
 
 ¿Qué es el Ciclo For?
 ---------------------
@@ -87,7 +85,7 @@ for i in 0, 1, 2, 3:
 - Sintaxis de range() con tres paramentros desde Python Docs:
  range(start, stop[, step])
 
-• start: El valor del parámetro start(0 si no se utliza el parámetro).
+• start: El valor del parámetro start(0 si no se utiliza el parámetro).
 • stop: El valor del parámetro stop.
 • step: El valor del parámetro step(1 si no se utiliza el parámetro).
 

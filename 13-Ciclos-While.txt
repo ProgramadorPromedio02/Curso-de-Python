@@ -14,7 +14,7 @@ Indentación(nivel de espaciado)
 
 Iteraciones
 -----------
- En número de iteraciones un ciclo while no tiene un número fijo o predeterminado de iteraciones cuando empiece a ejecutarse. Se ejecuta hasta que la condición es falsa.
+ En el número de iteraciones un ciclo while no tiene un número fijo o predeterminado de iteraciones cuando empiece a ejecutarse. Se ejecuta hasta que la condición es falsa.
 
 Lógica Básica:
 

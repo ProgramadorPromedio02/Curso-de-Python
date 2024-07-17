@@ -3,8 +3,8 @@ Matrices, Regresión Lineal Simple y Regresión Lineal Múltiple
 
 Regresión Lineal Simple
 -----------------------
-La regresión lineal simple es una técnica utilizada para modelar la relación entre dos variables, donde una es la variable independiente (predictora)
- y la otra es la variable dependiente (respuesta). La fórmula de la regresión lineal simple es:
+ La regresión lineal simple es una técnica utilizada para modelar la relación entre dos variables, donde una es la variable independiente (predictora)
+y la otra es la variable dependiente (respuesta). La fórmula de la regresión lineal simple es:
  y=β0+β1x+ϵ
 Donde:
 • y es la variable dependiente.

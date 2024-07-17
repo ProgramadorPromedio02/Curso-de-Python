@@ -5,7 +5,7 @@ Funciones
 --------------------
  Una función es un bloque de código reutilizable que realiza una sola tarea específica.
 
-Esquema de como sería una función:
+Esquema de cómo sería una función:
  ______________
 |  __________  |
 | |  Tarea   | |
@@ -101,7 +101,7 @@ Esquema gráfico llamando entre el programa principal y la función:
 |          |___________________________||
 |_______________________________________|
 
-Dentro de lo que se componen las funciones entre parentesis, se llama "parámetros" y valores que le pasamos se denoniman "argumentos".
+Dentro de lo que se componen las funciones entre paréntesis, se llama "parámetros" y los valores que le pasamos se denominan "argumentos".
 
  __________
 |Parámetros|
@@ -130,7 +130,7 @@ Dentro de lo que se componen las funciones entre parentesis, se llama "parámetr
  def mostrar_doble(num):
      print(num * 2)
 
- Si necesitamos tomar varios parámentos, deben estar sepados por comas.
+ Si necesitamos tomar varios parámetros, deben estar separados por comas.
  ____________    ___________
 |   Varios   |  | Separados |
 | Parámetros |->| por Comas |
@@ -140,7 +140,7 @@ Dentro de lo que se componen las funciones entre parentesis, se llama "parámetr
  def sumar(x, y):
      print(x + y)
 
- Si bien estos valores estan creados en el código, no están recibiendo ningun argumentos para ser usados.
+ Si bien estos valores están creados en el código, no están recibiendo ningún argumentos para ser usados.
 
 ¿Qué es un Argumento?
 ---------------------
@@ -177,7 +177,7 @@ Diferencia entre Parámentros y Argumentos
 |Argumentos|->|Llamada|
 |__________|  |_______|
 
-Esquema gráfico de la función retornando en el programado:
+Esquema gráfico de la función retornando en el programa:
  _______________________________________
 | ________				|
 ||Programa|	      ^			|
@@ -220,7 +220,7 @@ Si no hay 'return', por defecto será el valor None.
 >>> print(resultado)
 None
 
-En el shell interactivo, el valor retornado por la llamada a una función no se muestra si se asigna a una variable. Para ver el valor, se tiene que usar la función print()
+🗒Nota: En el shell interactivo, el valor retornado por la llamada a una función no se muestra si se asigna a una variable. Para ver el valor, se tiene que usar la función print().
 
 Alcance de una Variable(Scope)
 ------------------------------
