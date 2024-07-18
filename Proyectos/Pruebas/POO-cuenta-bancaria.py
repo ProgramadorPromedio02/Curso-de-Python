@@ -14,6 +14,7 @@ class CuentaBancaria:
 
 mi_cuenta = CuentaBancaria("105-356-643", "Nora Smith", 5600)
 
-mi_cuenta.generar_balance()
-mi_cuenta.depositar(400)
-mi_cuenta.generar_balance()
+mi_cuenta.generar_balance() # Nora tiene 5600 en su sueldo
+mi_cuenta.depositar(400) # Nora deposita unos 400 y ahora tiene 6000
+mi_cuenta.generar_balance() # Nota tiene 6000 en su sueldo
+

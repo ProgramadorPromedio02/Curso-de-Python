@@ -6,7 +6,7 @@ Importaciones
 ------------------
  Un módulo en Python es un archivo que contiene definiciones (como funciones, clases y variables) y sentencias ejecutables. Los módulos se utilizan para organizar y reutilizar código relacionado, facilitando la gestión y la estructura del programa.
 
-¿Qué es el Proceso de Importanción?
+¿Qué es el Proceso de Importación?
 -----------------------------------
  Un proceso de importación es una sentencia que da acceso a las funciones y constantes definidas en el módulo importado.
 
@@ -51,5 +51,5 @@ Importaciones
 >>> pow(9,2)
 81.0
 
-- Sintaxis muy usada pero que no es recomentadad☣:
+- Sintaxis muy usada pero que no es recomentadada☣:
  from <módulo> import *

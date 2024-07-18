@@ -5,7 +5,7 @@ SyntaxError
 -----------
  SyntaxError es un error en la sintaxis del programa. Ocurre cuando no se siguen las reglas formales para escribir código en Python.
 
-- Ejemplos:
+- Ejemplo:
 >>> x =% 3
 SyntaxError: invalid syntax
 
@@ -78,7 +78,7 @@ IndexError: string index out of range
 
 KeyError
 --------
->>> puntos = {"Gino": 235, "Nora 435, "Lulu": 342}
+>>> puntos = {"Gino": 235, "Nora": 435, "Lulu": 342}
 >>> puntos["Jack"]
 Traceback (most recent call last):
   File "<pyshell#10>", line 1, in <module>
@@ -135,15 +135,17 @@ Cláusulas try except
      # inmediatamente y ejecuta éste código
 
 - Ejemplo:
-1 num1 = int(input("Ingrese un número: "))
-2 num2 = int(input("Ingrese otro número: "))
+1   num1 = int(input("Ingrese un número: "))
+2   num2 = int(input("Ingrese otro número: "))
 3
-4 try:
-5     resultado = num1 / num2
-6     print(f"{num1} / {num2} =", resultado)
-7 except:
-8     print("Alerta, Excepción.")
-9
+4   try:
+5       print("Resultado en try:")
+6       resultado = num1 / num2
+7       print(f"{num1} / {num2} =", resultado)
+8   except:
+9       print("Resultado en except:")
+10      print("Alerta, Excepción.")
+11
 
 - Resultado en try:
 
@@ -224,6 +226,7 @@ division by zero
 9  else:
 10     print("Else")
 11 
+
 
 - Resultado en Else:
 
