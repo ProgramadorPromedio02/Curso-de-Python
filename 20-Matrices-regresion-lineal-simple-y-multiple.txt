@@ -1,6 +1,39 @@
 Matrices, Regresión Lineal Simple y Regresión Lineal Múltiple
 .............................................................
 
+Matrices
+--------
+ Las matrices son una estructura de datos fundamental en matemáticas y ciencias de la computación. En Python, las matrices se pueden manipular
+fácilmente utilizando la biblioteca numpy.
+Aquí hay un ejemplo de cómo crear y manipular matrices en Python usando numpy:
+import numpy as np
+
+# Crear una matriz
+A = np.array([[1, 2], [3, 4]])
+
+# Operaciones con matrices
+B = np.array([[5, 6], [7, 8]])
+
+# Suma de matrices
+C = A + B
+
+# Producto de matrices
+D = np.dot(A, B)
+
+# Transpuesta de una matriz
+E = A.T
+
+print('Matriz A:')
+print(A)
+print('Matriz B:')
+print(B)
+print('Suma de A y B:')
+print(C)
+print('Producto de A y B:')
+print(D)
+print('Transpuesta de A:')
+print(E)
+
 Regresión Lineal Simple
 -----------------------
  La regresión lineal simple es una técnica utilizada para modelar la relación entre dos variables, donde una es la variable independiente (predictora)
@@ -13,7 +46,11 @@ Donde:
 • β1 es el coeficiente de regresión que representa la pendiente.
 • ϵ es el término de error.
 
-En Python, podemos utilizar la biblioteca scikit-learn para realizar regresión lineal simple. Aquí hay un ejemplo:
+En Python, podemos utilizar la biblioteca matplotlib y scikit-learn para realizar regresión lineal simple con los siguientes comandos:
+• pip install matplotlib
+• pip install scikit-learn
+
+Ejemplo:
 import numpy as np
 import matplotlib.pyplot as plt from sklearn.linear_model import LinearRegression
 
@@ -72,35 +109,4 @@ y_pred = model.predict(X)
 print(f'Intersección (β0): {model.intercept_}')
 print(f'Coeficientes (β1, β2, ...): {model.coef_}')
 
-Matrices
---------
- Las matrices son una estructura de datos fundamental en matemáticas y ciencias de la computación. En Python, las matrices se pueden manipular
-fácilmente utilizando la biblioteca numpy.
-Aquí hay un ejemplo de cómo crear y manipular matrices en Python usando numpy:
-import numpy as np
 
-# Crear una matriz
-A = np.array([[1, 2], [3, 4]])
-
-# Operaciones con matrices
-B = np.array([[5, 6], [7, 8]])
-
-# Suma de matrices
-C = A + B
-
-# Producto de matrices
-D = np.dot(A, B)
-
-# Transpuesta de una matriz
-E = A.T
-
-print('Matriz A:')
-print(A)
-print('Matriz B:')
-print(B)
-print('Suma de A y B:')
-print(C)
-print('Producto de A y B:')
-print(D)
-print('Transpuesta de A:')
-print(E)
