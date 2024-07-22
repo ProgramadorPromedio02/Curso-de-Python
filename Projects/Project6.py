@@ -30,7 +30,7 @@ def binary_search(list, target, limit_bottom=None, limit_top=None):
 
 if __name__ == '__main__':
   # Crear una lista ordenada con 10000 números aleatorios.
-  size = 10000
+  size = 100000
   initial_set = set()
 
   while len(initial_set) < size:
@@ -39,7 +39,15 @@ if __name__ == '__main__':
   ordered_list = sorted(list(initial_set))
 
   # Medir el tiempo de búsqueda ingenua
-  # start = time.time()
-  # for target in ordered_list
+  start = time.time()
+  for target in ordered_list:
+      binary_search(ordered_list, target)
+  end = time.time()
+  print(f"Tiempo de búsqueda ingenua: {end - start} segundos.")
   
-  # Medir el tiempo de búsqueda ingenua
+  # Medir el tiempo de búsqueda binaria
+  start = time.time()
+  for target in ordered_list:
+      binary_search(ordered_list, target)
+  end = time.time()
+  print(f"Tiempo de búsqueda binaria: {end - start} segundos.")
