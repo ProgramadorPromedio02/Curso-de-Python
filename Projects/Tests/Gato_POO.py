@@ -7,4 +7,4 @@ class Gato:
         print("Miau!")
 
 mi_gato = Gato("Pelusa", 5)
-mi_gato.maullar() # Output: Guau!
+mi_gato.maullar() # Output: Miau!
